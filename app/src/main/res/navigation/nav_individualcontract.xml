@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_individualcontract"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/employerContract">
+
+    <fragment
+        android:id="@+id/employerContract"
+        android:name="co.tecno.sersoluciones.analityco.individualContract.EmployerContract"
+        android:label="EmployerContract"
+        tools:layout="@layout/fragment_employer_contract">
+        <action
+            android:id="@+id/action_employerContract_to_scanFragmnet2"
+            app:destination="@id/scanIndividualContractFragmnet" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanIndividualContractFragmnet"
+        android:name="co.tecno.sersoluciones.analityco.individualContract.ScanIndivualContractFragment"
+        android:label="ScanFragmnet" >
+        <action
+            android:id="@+id/action_scanIndividualContractFragmnet_to_personalIndividualContractFragment"
+            app:destination="@id/personalIndividualContractFragment" />
+        <action
+            android:id="@+id/action_scanIndividualContractFragmnet_to_detailsPersonalFragment2"
+            app:destination="@id/detailsPersonalFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalIndividualContractFragment"
+        android:name="co.tecno.sersoluciones.analityco.individualContract.PersonalIndividualContractFragment"
+        android:label="PersonalIndividualContractFragment" >
+        <argument
+            android:name="personal"
+            app:argType="co.tecno.sersoluciones.analityco.models.PersonalNetwork"
+            app:nullable="true" />
+        <argument
+            android:name="infoUser"
+            app:argType="co.tecno.sersoluciones.analityco.utilities.DecodeBarcode$InfoUser"
+            app:nullable="true" />
+        <argument
+            android:name="documentNumber"
+            app:argType="long" />
+        <argument
+            android:name="personalEmployerInfoId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_personalIndividualContractFragment_to_placeToJobFragment"
+            app:destination="@id/placeToJobFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsPersonalFragment2"
+        android:name="co.tecno.sersoluciones.analityco.individualContract.DetailsPersonalIndivudalContractFragment"
+        android:label="DetailsPersonalFragment">
+        <argument
+            android:name="personal"
+            app:argType="co.tecno.sersoluciones.analityco.models.PersonalNetwork" />
+
+        <action
+            android:id="@+id/action_detailsPersonalFragment2_to_placeToJobFragment"
+            app:destination="@id/placeToJobFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/placeToJobFragment"
+        android:name="co.tecno.sersoluciones.analityco.individualContract.PlaceToJobFragment"
+        android:label="PlaceToJobFragment" >
+        <action
+            android:id="@+id/action_placeToJobFragment_to_iinitiateOrderFragment"
+            app:destination="@id/iinitiateOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/iinitiateOrderFragment"
+        android:name="co.tecno.sersoluciones.analityco.individualContract.IinitiateOrderFragment"
+        android:label="IinitiateOrderFragment">
+        <argument
+            android:name="placetoJob"
+            app:argType="co.tecno.sersoluciones.analityco.models.PlaceToJob" />
+        <action
+            android:id="@+id/action_iinitiateOrderFragment_to_documentForIndividualContractFragment"
+            app:destination="@id/documentForIndividualContractFragment" />
+        <action
+            android:id="@+id/action_iinitiateOrderFragment_to_dataForEmployeeFragment"
+            app:destination="@id/dataForEmployeeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/documentForIndividualContractFragment"
+        android:name="co.tecno.sersoluciones.analityco.individualContract.DocumentForIndividualContractFragment"
+        android:label="DocumentForIndividualContractFragment">
+        <argument
+            android:name="IdContract"
+            app:argType="string"/>
+        <argument
+            android:name="Nationality"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_documentForIndividualContractFragment_to_requestOrderFragment"
+            app:destination="@id/requestOrderFragment" />
+        <action
+            android:id="@+id/action_documentForIndividualContractFragment_to_dataForEmployeeFragment2"
+            app:destination="@id/dataForEmployeeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestOrderFragment"
+        android:name="co.tecno.sersoluciones.analityco.individualContract.RequestOrderFragment"
+        android:label="RequestOrderFragment">
+        <argument
+            android:name="IdContract"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/dataForEmployeeFragment"
+        android:name="co.tecno.sersoluciones.analityco.individualContract.DataForEmployeeFragment"
+        android:label="DataForEmployeeFragment" >
+        <argument
+            android:name="IdContract"
+            app:argType="string"/>
+        <argument
+            android:name="Nationality"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_dataForEmployeeFragment_to_documentForIndividualContractFragment"
+            app:destination="@id/documentForIndividualContractFragment" />
+    </fragment>
+</navigation>

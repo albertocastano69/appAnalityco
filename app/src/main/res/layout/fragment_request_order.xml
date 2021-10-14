@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="co.tecno.sersoluciones.analityco.ui.createPersonal.viewmodels.PersonalViewModel" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/border_bottom"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/control_buttons"
+            layout="@layout/base_control_buttons" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/type_contract"
+            style="@style/ExposedDropdownMenuText.App.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_search"
+            app:endIconMode="clear_text">
+
+            <AutoCompleteTextView
+                android:id="@+id/typeContractCompleteTextView"
+                style="@style/AnalitycoEditText"
+                android:hint="@string/tipo_de_contrato"
+                android:inputType="text"
+                android:maxLength="100"
+                android:maxLines="1"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/type_position"
+            style="@style/ExposedDropdownMenuText.App.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_search"
+            app:startIconDrawable="@drawable/ic_menu_search">
+
+            <AutoCompleteTextView
+                android:id="@+id/typePositionCompleteTextView"
+                style="@style/AnalitycoEditText"
+                android:hint="@string/tipo_de_position"
+                android:inputType="text"
+                android:maxLength="100"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/salary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search">
+            <EditText
+                android:id="@+id/salary_edText"
+                android:imeOptions="flagNoExtractUi"
+                style="@style/InnovoEditText"
+                android:inputType="number"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:hint="@string/salario"
+                android:textSize="15sp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pay_period"
+            style="@style/ExposedDropdownMenuText.App.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_search"
+            app:startIconDrawable="@drawable/ic_menu_search">
+
+            <AutoCompleteTextView
+                android:id="@+id/payPeriodCompleteTextView"
+                style="@style/AnalitycoEditText"
+                android:hint="@string/pay_period"
+                android:inputType="text"
+                android:maxLength="100"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha de inicio de labores"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="top"
+                android:gravity="top"
+                android:textColor="@color/black_alpha"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/InitDate"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/bg_search">
+                <EditText
+                    android:id="@+id/edt_init_date"
+                    android:imeOptions="flagNoExtractUi"
+                    style="@style/InnovoEditText"
+                    android:layout_height="70dp"
+                    android:gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:drawableLeft="@drawable/ic_calendar"
+                    android:hint="dd/MMM/yyyy"
+                    android:textSize="15sp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/CountryContract"
+            style="@style/ExposedDropdownMenuText.App.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_search"
+            app:startIconDrawable="@drawable/ic_menu_search">
+
+            <AutoCompleteTextView
+                android:id="@+id/countryContractcCompleteTextView"
+                style="@style/AnalitycoEditText"
+                android:hint="@string/country_contract"
+                android:inputType="text"
+                android:maxLength="100"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/CityContract"
+            style="@style/ExposedDropdownMenuText.App.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_search"
+            app:startIconDrawable="@drawable/ic_menu_search">
+
+            <AutoCompleteTextView
+                android:id="@+id/cityContractCompleteTextView"
+                style="@style/AnalitycoEditText"
+                android:hint="@string/city_contract"
+                android:inputType="text"
+                android:maxLength="100"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/PlaceJob"
+            style="@style/ExposedDropdownMenuText.App.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_search"
+            app:startIconDrawable="@drawable/ic_menu_search">
+
+            <AutoCompleteTextView
+                android:id="@+id/placeJobCompleteTextView"
+                style="@style/AnalitycoEditText"
+                android:hint="@string/place_job"
+                android:inputType="text"
+                android:maxLength="100"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ordenRequest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:padding="2dp">
+
+                <LinearLayout
+                    android:id="@+id/iconFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_blank_paper_green">
+
+                    <TextView
+                        android:id="@+id/typeDocument"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="PDF"
+                        android:gravity="center"
+                        android:padding="4dp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:gravity="start">
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/green_positive_button"
+                        android:layout_toEndOf="@+id/icon_calendar"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ordenAproved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:padding="2dp">
+
+                <LinearLayout
+                    android:id="@+id/iconFileapproved"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_blank_paper_blue">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="PDF"
+                        android:gravity="center"
+                        android:padding="4dp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:gravity="start">
+                    <TextView
+                        android:id="@+id/descriptionapproved"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorButtonLogin"
+                        android:text="Orden de ingreso aprobada" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ordenReject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:padding="2dp">
+                <LinearLayout
+                    android:id="@+id/iconFilereject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_blank_paper_red">
+
+                    <TextView
+                        android:id="@+id/typeDocumentreject"
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:text="PDF"
+                        android:padding="4dp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:gravity="start">
+                    <TextView
+                        android:id="@+id/descriptionreject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/bar_undecoded"
+                        android:text="Orden de ingreso rechazada" />
+                </RelativeLayout>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/label_comment_reject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RECHAZADO POR:"
+                android:visibility="gone"
+                android:textColor="@color/bar_undecoded"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/comment_reject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/black_alpha"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mProgressView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_overlay"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:layout_anchorGravity="center_vertical|center_horizontal" />
+
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</layout>

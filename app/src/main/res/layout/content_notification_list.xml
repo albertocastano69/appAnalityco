@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Projectos"
+            android:visibility="gone"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/spinner_background"
+            android:id="@+id/project"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/frameProject"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contratos"
+            android:visibility="gone"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/spinner_background"
+            android:id="@+id/contract"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/frameContract"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Empleadores"
+            android:visibility="gone"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/spinner_background"
+            android:id="@+id/employer"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/frameEmployer"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal"
+            android:visibility="gone"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/spinner_background"
+            android:id="@+id/personal"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/framePersonal"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

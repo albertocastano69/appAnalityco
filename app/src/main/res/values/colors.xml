@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#039be5</color>
+    <color name="colorPrimaryDark">#027eb6</color>
+    <color name="colorAccent">#6aca25</color>
+    <color name="colorBackground">#dedede</color>
+    <color name="colorUnderline">#A6A6A6</color>
+
+    <color name="colorButtonLogin">#0099cc</color>
+
+    <color name="whiteTransparent">#dcffffff</color>
+    <color name="info">#dae9f1</color>
+    <!-- Colors related button -->
+    <color name="btnText">#185698</color>
+    <color name="btnBackground">#84d0fd</color>
+
+    <color name="green_positive_button">#4caf50</color>
+
+    <color name="colorRadioButtonOn">#2980b9</color>
+    <color name="colorRadioButtonOff">#3498db</color>
+
+    <color name="black_overlay">#664D4D4D</color>
+
+    <color name="purple">#b83dba</color>
+
+
+    <color name="bar_decoded">#FF00FF00</color>
+    <color name="bar_undecoded">#FFFF0000</color>
+    <color name="anulado">#AFB135</color>
+
+    <color name="pink">#ffa5a5</color>
+    <color name="black_alpha_40">#66000000</color>
+    <color name="expiry">#c6ff8000</color>
+    <color name="black_alpha">#b3000000</color>
+
+    <color name="light_gray">#fafafa</color>
+    <color name="gray">#aaa</color>
+    <color name="dark_gray">#464646</color>
+
+    <color name="blue_aqua">#6acccb</color>
+    <color name="orange">#fa9c0e</color>
+    <color name="text_tab">#2d1c02</color>
+
+    <color name="gray_label">#4c4c4c</color>
+
+    <color name="back_transparent">#7eeeeeee</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="dark">#000000</color>
+    <color name="red">#ffff4444</color>
+    <color name="orangeIcon">#E57E22</color>
+
+    <color name="colorBlueDisabled">#0086C5</color>
+    <color name="colorGreenDisabled">#58AA1F</color>
+
+
+    <!-- Material DEFAULT colors -->
+    <color name="material_drawer_primary">#2196F3</color>
+    <color name="material_drawer_primary_dark">#1976D2</color>
+    <color name="material_drawer_primary_light">#BBDEFB</color>
+    <color name="material_drawer_accent">#FF4081</color>
+
+    <!-- OVERWRITE THESE COLORS FOR A LIGHT THEME -->
+    <!-- MaterialDrawer DEFAULT colors -->
+    <color name="material_drawer_background">#F9F9F9</color>
+    <!-- Material DEFAULT text / items colors -->
+    <color name="material_drawer_primary_text">#DE000000</color>
+    <color name="material_drawer_primary_icon">#8A000000</color>
+    <color name="material_drawer_secondary_text">#8A000000</color>
+    <color name="material_drawer_hint_text">#42000000</color>
+    <color name="material_drawer_divider">#1F000000</color>
+    <!-- Material DEFAULT drawer colors -->
+    <color name="material_drawer_selected">#1F2196F3</color>
+    <color name="material_drawer_selected_legacy">#E8E8E8</color>
+    <color name="material_drawer_selected_text">#2196F3</color>
+    <color name="material_drawer_header_selection_text">#E8E8E8</color>
+    <color name="material_drawer_header_selection_subtext">#FFF</color>
+
+    <color name="logo_analityco">#FFEB740B</color>
+
+    <color name="card_gray">#E4E4E4</color>
+
+    <color name="overlayBlack">#59000000</color>
+
+    <color name="administrativo">#4472c4</color>
+    <color name="asociado">#8faadc</color>
+    <color name="contratista">#ed7d31</color>
+    <color name="proveedor">#843c0c</color>
+    <color name="funcionario">#ffe699</color>
+    <color name="visitante">#548235</color>
+</resources>

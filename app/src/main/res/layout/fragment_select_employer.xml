@@ -1,0 +1,232 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="1dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="0dp"
+                android:contentDescription="@string/str_phone"
+                android:scaleType="fitCenter"
+                android:src="@drawable/image_not_available"
+                android:transitionName="@string/img_transition"
+                tools:ignore="RtlCompat,RtlHardcoded"
+                tools:targetApi="lollipop" />
+
+            <ImageView
+                android:id="@+id/state_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/state_icon"
+                android:rotation="180"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/logo"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="7dp"
+                tools:ignore="RtlCompat">
+                <!--
+                            <android.support.v7.widget.Toolbar
+                                android:id="@+id/toolbar_card"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/actionBarSize"
+                                android:layout_marginBottom="-10dp"
+                                android:layout_marginEnd="-5dp"
+                                android:layout_marginStart="-5dp"
+                                android:layout_marginTop="-10dp"
+                                android:background="@android:color/transparent"
+                                app:popupTheme="@style/BaseTheme.PopupOverlay" />-->
+
+                <TextView
+                    android:id="@+id/text_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:ignore="RtlCompat,RtlHardcoded,RtlSymmetry" />
+
+                <!--  <TextView
+                      android:id="@+id/label_nit"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_below="@+id/text_name"
+                      android:text="@string/text_nit"
+                      android:textAppearance="?attr/textAppearanceListItem"
+                      android:textStyle="bold"
+                      tools:ignore="RtlCompat" />
+
+                  <TextView
+                      android:id="@+id/text_nit"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_below="@+id/text_name"
+                      android:layout_marginBottom="2dp"
+                      android:layout_toEndOf="@+id/label_nit"
+                      android:textAppearance="?attr/textAppearanceListItem"
+                      tools:ignore="RtlCompat" />-->
+
+                <TextView
+                    android:id="@+id/text_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_name"
+                    android:layout_marginBottom="2dp"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-light"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    tools:ignore="RtlCompat" />
+
+                <Button
+                    android:id="@+id/icon_phone"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/text_name"
+                    android:background="@drawable/button_float_call"
+                    android:visibility="gone"
+                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/label_validity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_address"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-light"
+                    android:maxLines="1"
+                    android:text="@string/label_validity"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/text_validity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_address"
+                    android:layout_marginBottom="2dp"
+                    android:layout_toEndOf="@+id/label_validity"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-light"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                <ImageView
+                    android:id="@+id/icon_is_active"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/text_address"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="0dp"
+                    android:contentDescription="@string/str_phone"
+                    android:scaleType="fitCenter"
+                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/label_active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_address"
+                    android:layout_marginBottom="2dp"
+                    android:layout_toStartOf="@+id/icon_is_active"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="Activo"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/whiteTransparent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingEnd="10dp"
+        android:paddingStart="6dp">
+
+        <ImageView
+            android:id="@+id/cancel_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="35dp"
+            android:background="@color/colorUnderline" />
+
+        <Button
+            android:id="@+id/enableSearchBtn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CAMBIAR EL EMPLEADOR BUSCANDO AQUI" />
+
+        <EditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/buscar"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorUnderline" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/employers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

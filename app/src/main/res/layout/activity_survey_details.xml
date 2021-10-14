@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SurveyDetailsActivity">
+
+    <data>
+
+        <variable
+            name="surveyForm"
+            type="co.tecno.sersoluciones.analityco.models.SurveyDetails" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:visibility="visible"
+                android:scrollbars="vertical"
+                android:padding="@dimen/survey_details_margin">
+
+                <TextView
+                    android:id="@+id/symptom_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hoy_presento_este_sintoma"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/subtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fever_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/symptom_card_height"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    app:cardBackgroundColor="@color/card_gray"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/symptom_subtitle">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/card_padding">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fiebre_de_mas_de_38_grados"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{surveyForm.fever}"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cough_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/symptom_card_height"
+                    android:layout_marginTop="@dimen/card_item_margin"
+                    app:cardBackgroundColor="@color/card_gray"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/fever_card">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/card_padding">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tos"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{surveyForm.cough}"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/nasal_congestion_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/symptom_card_height"
+                    android:layout_marginTop="@dimen/card_item_margin"
+                    app:cardBackgroundColor="@color/card_gray"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/cough_card">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/card_padding">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/congestion_nasal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{surveyForm.nasalCongestion}"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/sore_throat_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/symptom_card_height"
+                    android:layout_marginTop="@dimen/card_item_margin"
+                    app:cardBackgroundColor="@color/card_gray"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/nasal_congestion_card">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/card_padding">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dolor_de_garganta"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{surveyForm.soreThroat}"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/difficulty_breathing_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/symptom_card_height"
+                    android:layout_marginTop="@dimen/card_item_margin"
+                    app:cardBackgroundColor="@color/card_gray"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/sore_throat_card">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/card_padding">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dificultad_para_respirar"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{surveyForm.difficultyBreathing}"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fatigue_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/symptom_card_height"
+                    android:layout_marginTop="@dimen/card_item_margin"
+                    app:cardBackgroundColor="@color/card_gray"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/difficulty_breathing_card">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/card_padding">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fatiga"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{surveyForm.fatigue}"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/shivers_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/symptom_card_height"
+                    android:layout_marginTop="@dimen/card_item_margin"
+                    app:cardBackgroundColor="@color/card_gray"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/fatigue_card">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/card_padding">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/escalofrios"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{surveyForm.shivers}"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/muscle_pain_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/symptom_card_height"
+                    android:layout_marginTop="@dimen/card_item_margin"
+                    app:cardBackgroundColor="@color/card_gray"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/shivers_card">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/card_padding">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dolor_de_musculos"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{surveyForm.musclePain}"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/contact_with"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    android:text="@string/contacto_con"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/subtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/muscle_pain_card" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/contact_with_symptoms_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    app:cardBackgroundColor="@color/card_gray"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/contact_with">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/card_padding">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/text_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.6" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_with_symptoms"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/text_end"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/text_margin_end"
+                            android:text='@{surveyForm.otherPersonHasSymptoms ?? "NO"}'
+                            android:textColor="@color/dark"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/contagious_contact_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/card_item_margin"
+                    app:cardBackgroundColor="@color/card_gray"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/contact_with_symptoms_card">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/card_padding">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/text2_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.6" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contagious_contact"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/text2_end"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/text_margin_end"
+                            android:text='@{surveyForm.otherPersonHasCOVID19 ?? "NO"}'
+                            android:textColor="@color/dark"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/transport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    android:text="@string/medio_de_transporte"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/subtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/contagious_contact_card" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/transport_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@+id/transport"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:listitem="@layout/survey_card_adapter" />
+
+                <TextView
+                    android:id="@+id/temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    android:text="@string/temperatura"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/subtitle_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/transport_list" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/text_margin_end"
+                    android:text='@{surveyForm.temperatura ?? "0"}'
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/temperature" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_survey"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/editsurvey"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:visibility="gone"
+                android:padding="@dimen/survey_details_margin">
+                <TextView
+                    android:id="@+id/labelTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reporte_diario_de_sintomas"
+                    android:gravity="center"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/label_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/labelTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/subtitle_size"
+                    android:text="de" />
+                <TextView
+                    android:id="@+id/info_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/label_descripcion"
+                    android:textColor="@color/colorRadioButtonOff"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textSize="@dimen/subtitle_size"/>
+                <TextView
+                    android:id="@+id/question_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/descripcion_pregunta_sintomas"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/info_person"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/subtitle_size"/>
+                <TableLayout
+                    android:id="@+id/table_questions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/question_two"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_feber"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:onClick="onClickOption"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/fiebre_de_mas_de_38_grados"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp" />
+                        <Button
+                            android:id="@+id/option_tos"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:onClick="onClickOption"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/tos"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp" />
+                    </TableRow>
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_congestion_nasal"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:onClick="onClickOption"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/congestion_nasal"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp" />
+                        <Button
+                            android:id="@+id/option_dolor_garganta"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:onClick="onClickOption"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/dolor_de_garganta"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp" />
+                    </TableRow>
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_dificultad_respirar"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/dificultad_para_respirar"
+                            android:onClick="onClickOption"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp" />
+                        <Button
+                            android:id="@+id/option_fatiga"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/fatiga"
+                            android:onClick="onClickOption"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp" />
+                    </TableRow>
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_escalofrios"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/escalofrios"
+                            android:onClick="onClickOption"
+                            android:textColor="@color/dark"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="10dp" />
+                        <Button
+                            android:id="@+id/option_dolor_musculos"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/dolor_de_musculos"
+                            android:onClick="onClickOption"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp" />
+                    </TableRow>
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_digestivo"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/problemas_digestivos"
+                            android:textColor="@color/dark"
+                            android:onClick="onClickOption"
+                            android:textSize="10dp" />
+                        <Button
+                            android:id="@+id/option_ninguna"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/ninguna"
+                            android:textColor="@color/dark"
+                            android:onClick="onClickOption"
+                            android:textSize="10dp" />
+                    </TableRow>
+                </TableLayout>
+                <TextView
+                    android:id="@+id/question_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/descripcion_pregunta_sintomas"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:drawableEnd="@drawable/ic_baseline_emergency_24"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/table_questions"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/subtitle_size"/>
+                <TableLayout
+                    android:id="@+id/table_questions_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/question_three"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_person_with_symptom_ok"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:onClick="onClickOption"
+                            android:text="@string/respuesta_positiva"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            tools:ignore="ButtonStyle" />
+
+                        <Button
+                            android:id="@+id/option_person_with_symptom_negativa"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:onClick="onClickOption"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/respuesta_negativa"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            tools:ignore="ButtonStyle" />
+                    </TableRow>
+                </TableLayout>
+                <TextView
+                    android:id="@+id/question_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/contagious_contact"
+                    android:drawableEnd="@drawable/ic_baseline_emergency_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/table_questions_three"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/subtitle_size"/>
+                <TableLayout
+                    android:id="@+id/table_questions_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/question_four"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_person_with_covid_ok"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:onClick="onClickOption"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/respuesta_positiva"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            tools:ignore="ButtonStyle" />
+                        <Button
+                            android:id="@+id/option_person_with_covid_negativa"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:onClick="onClickOption"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/respuesta_negativa"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            tools:ignore="ButtonStyle" />
+                    </TableRow>
+
+                </TableLayout>
+                <TextView
+                    android:id="@+id/question_transport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pregunta_cuatro"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:gravity="center"
+                    android:drawableEnd="@drawable/ic_baseline_emergency_24"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/table_questions_four"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/subtitle_size"/>
+                <TableLayout
+                    android:id="@+id/table_questions_transport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/question_transport"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_caminando"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/caminando"
+                            android:onClick="onClickOption"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center" />
+                        <Button
+                            android:id="@+id/option_bicicleta"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/biclicleta"
+                            android:textColor="@color/dark"
+                            android:onClick="onClickOption"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center" />
+                    </TableRow>
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_moto"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:onClick="onClickOption"
+                            android:text="@string/moto"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+                        <Button
+                            android:id="@+id/option_auto"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/auto"
+                            android:onClick="onClickOption"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+                    </TableRow>
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_transmilenio"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:onClick="onClickOption"
+                            android:text="@string/publico"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+                        <Button
+                            android:id="@+id/option_sitp"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:onClick="onClickOption"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/sitp"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+                    </TableRow>
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_bus"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:onClick="onClickOption"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/bus"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+                        <Button
+                            android:id="@+id/option_transport_empresa"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/empresa"
+                            android:onClick="onClickOption"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+                    </TableRow>
+                    <TableRow>
+                        <Button
+                            android:id="@+id/option_taxi"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/taxi"
+                            android:onClick="onClickOption"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+                        <Button
+                            android:id="@+id/option_home_office"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:text="@string/homeoffice"
+                            android:onClick="onClickOption"
+                            android:textColor="@color/dark"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+                    </TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Temperatura Corporal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/subtitle_margin"
+                        app:layout_constraintTop_toBottomOf="@+id/table_questions_four"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/subtitle_size"/>
+
+                    <TableRow>
+                        <EditText
+                            android:id="@+id/edt_temperature"
+                            android:layout_width="10dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorUnderline"
+                            android:textColor="@color/dark"
+                            android:hint="@string/temperatura"
+                            android:textSize="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"/>
+
+                    </TableRow>
+
+                </TableLayout>
+
+
+
+                <TextView
+                    android:id="@+id/privacy_polities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/politicas_privacidad_aceptar"
+                    app:layout_constraintTop_toBottomOf="@+id/table_questions_transport"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/subtitle_margin"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/subtitle_size" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/privacy_polities"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_height="60dp"
+                        android:text="@string/cancel_button"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"/>
+                    <Button
+                        android:id="@+id/safe_answer"
+                        android:layout_height="60dp"
+                        android:text="@string/safe_button"
+                        android:layout_gravity="center"
+                        android:backgroundTint="@color/colorAccent"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_width="0dp" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <WebView
+            android:id="@+id/survey_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

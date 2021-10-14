@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="personal"
+            type="co.tecno.sersoluciones.analityco.models.PersonalNetwork" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:ignore="UnusedAttribute">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/control_buttons"
+                layout="@layout/base_control_buttons" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/light_gray"
+                app:cardCornerRadius="1dp"
+                app:cardUseCompatPadding="true"
+                tools:ignore="UnusedAttribute">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <net.steamcrafted.materialiconlib.MaterialIconView
+                        android:id="@+id/icon_edit_main_form"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="12dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:scaleType="center"
+                        android:visibility="visible"
+                        app:materialIcon="pencil"
+                        app:materialIconColor="@color/colorAccent"
+                        app:materialIconSize="40dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="5dp"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/header_img"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_alignParentTop="true"
+                            android:foregroundGravity="center"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/profile_dummy"
+                            app:setLogoImage="@{personal.Photo}"
+                            app:shapeAppearance="@style/ShapeAppearance.App.SmallComponent" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/logo"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_text">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.2" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.6" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.8" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/background_black"
+                                android:fontFamily="sans-serif-light"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:text="@string/id"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@id/guide1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+                            <TextView
+                                android:id="@+id/text_identification"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="start"
+                                android:text="@{personal.DocumentNumber}"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                app:layout_constraintEnd_toStartOf="@id/guide2"
+                                app:layout_constraintStart_toEndOf="@id/guide1"
+                                app:layout_constraintTop_toBottomOf="@+id/name"
+                                tools:ignore="RtlHardcoded" />
+
+                            <TextView
+                                android:id="@+id/label_rh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/background_black"
+                                android:fontFamily="sans-serif-light"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:text="@string/rh"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@id/guide2"
+                                app:layout_constraintStart_toStartOf="@id/guide3"
+                                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+                            <TextView
+                                android:id="@+id/text_rh"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="start"
+                                android:text="@{personal.RH}"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/guide3"
+                                app:layout_constraintTop_toBottomOf="@+id/name"
+                                tools:ignore="RtlHardcoded" />
+
+                            <ImageView
+                                android:id="@+id/nationality_flag"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/ic_flag_of_colombia"
+                                app:layout_constraintEnd_toStartOf="@id/guide1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/text_identification"
+                                app:setFlagBackground="@{personal.Nationality}" />
+
+                            <TextView
+                                android:id="@+id/text_place_birth"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="start"
+                                android:text="@{@string/place_birth_name(personal.CityOfBirthName, personal.StateOfBirthName)}"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                app:layout_constraintEnd_toStartOf="@id/guide2"
+                                app:layout_constraintStart_toEndOf="@id/guide1"
+                                app:layout_constraintTop_toBottomOf="@+id/text_identification"
+                                tools:ignore="RtlHardcoded" />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/ic_gender_web"
+                                app:layout_constraintEnd_toStartOf="@id/guide3"
+                                app:layout_constraintStart_toEndOf="@id/guide2"
+                                app:layout_constraintTop_toBottomOf="@+id/text_identification" />
+
+                            <TextView
+                                android:id="@+id/text_gender"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="start"
+                                android:text="@{personal.Sex}"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/guide3"
+                                app:layout_constraintTop_toBottomOf="@+id/text_identification"
+                                tools:ignore="RtlHardcoded" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/linearLayout"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="end"
+                            android:paddingStart="20dp"
+                            android:paddingBottom="5dp"
+                            android:text="Contacto:"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            tools:ignore="RtlHardcoded" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorPrimary" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="15dp">
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="5dp" />
+
+                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                android:id="@+id/icon_job"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:scaleType="center"
+                                app:materialIcon="school"
+                                app:materialIconColor="#b3000000"
+                                app:materialIconSize="30dp" />
+
+                            <TextView
+                                android:id="@+id/text_job"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/icon_job"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="end"
+                                android:text="@{personal.JobName}"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                tools:ignore="RtlHardcoded" />
+
+                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                android:id="@+id/icon_phone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_below="@+id/icon_job"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:scaleType="center"
+                                app:materialIcon="phone"
+                                app:materialIconColor="#b3000000"
+                                app:materialIconSize="30dp" />
+
+                            <TextView
+                                android:id="@+id/text_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/icon_job"
+                                android:layout_toEndOf="@+id/icon_phone"
+                                android:autoLink="phone"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="end"
+                                android:text="@{personal.PhoneNumber}"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                tools:ignore="RtlHardcoded" />
+
+                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                android:id="@+id/icon_home"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_below="@+id/icon_phone"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:scaleType="center"
+                                app:materialIcon="home"
+                                app:materialIconColor="#b3000000"
+                                app:materialIconSize="30dp" />
+
+                            <TextView
+                                android:id="@+id/text_home"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/icon_phone"
+                                android:layout_toEndOf="@+id/icon_home"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="end"
+                                android:text="@{personal.Address}"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                tools:ignore="RtlHardcoded" />
+
+                            <TextView
+                                android:id="@+id/label_eps"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/icon_home"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/background_black"
+                                android:fontFamily="sans-serif-light"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:text="@string/label_eps"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/text_eps"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/icon_home"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginBottom="8dp"
+                                android:layout_toEndOf="@+id/label_eps"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="start"
+                                android:text="@{personal.EpsName}"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                tools:ignore="RtlHardcoded" />
+
+                            <TextView
+                                android:id="@+id/label_afp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/text_eps"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/background_black"
+                                android:fontFamily="sans-serif-light"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:text="@string/label_afp"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/text_afp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/text_eps"
+                                android:layout_alignParentEnd="true"
+                                android:layout_toEndOf="@+id/label_afp"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="start"
+                                android:text="@{personal.AfpName}"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                tools:ignore="RtlHardcoded" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="end"
+                            android:paddingStart="20dp"
+                            android:paddingBottom="5dp"
+                            android:text="En caso de emergencia llamar a:"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            tools:ignore="RtlHardcoded" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorPrimary" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="15dp">
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="5dp" />
+
+                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                android:id="@+id/icon_contact_person"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:scaleType="center"
+                                app:materialIcon="account"
+                                app:materialIconColor="#b3000000"
+                                app:materialIconSize="30dp" />
+
+                            <TextView
+                                android:id="@+id/text_contact_person"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/icon_contact_person"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="end"
+                                android:text="@{personal.EmergencyContact}"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                tools:ignore="RtlHardcoded" />
+
+                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                android:id="@+id/icon_contact_phone"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_below="@+id/icon_contact_person"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:scaleType="center"
+                                app:materialIcon="phone"
+                                app:materialIconColor="#b3000000"
+                                app:materialIconSize="30dp" />
+
+                            <TextView
+                                android:id="@+id/text_contact_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/icon_contact_person"
+                                android:layout_toEndOf="@+id/icon_contact_phone"
+                                android:autoLink="phone"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="end"
+                                android:text="@{personal.EmergencyContactPhone}"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                tools:ignore="RtlHardcoded" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

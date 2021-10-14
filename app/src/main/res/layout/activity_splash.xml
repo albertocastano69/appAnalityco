@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="co.tecno.sersoluciones.analityco.SplashActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/splashFragment"
+        android:name="co.tecno.sersoluciones.analityco.fragments.SplashFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DCDCDC"
+        tools:context="co.tecno.sersoluciones.analityco.SplashActivity">
+
+        <!-- The primary full-screen view. This can be replaced with whatever view
+             is needed to present your content, e.g. VideoView, SurfaceView,
+             TextureView, etc. -->
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="100dp"
+            android:keepScreenOn="true"
+            android:src="@drawable/ic_logo_analityco_nombre" />
+
+        <TextView
+            android:id="@+id/fullscreen_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="Aplicativo movil para el enrolamiento de personal"
+            android:textColor="#868589"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            style="@style/Widget.Button.Intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="30dp"
+            android:onClick="login"
+            android:text="@string/login_text"
+            android:textSize="23sp"
+            app:backgroundTint="@color/primary_dark" />
+
+        <Button
+            style="@style/Widget.Button.NegativeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="30dp"
+            android:onClick="register"
+            android:text="@string/register_text"
+            android:textSize="23sp" />
+
+    </FrameLayout>
+</LinearLayout>

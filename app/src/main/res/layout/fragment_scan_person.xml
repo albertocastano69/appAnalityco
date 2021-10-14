@@ -1,0 +1,173 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="2dp"
+                app:cardBackgroundColor="@color/whiteTransparent"
+                app:cardCornerRadius="0dp"
+                tools:ignore="UnusedAttribute">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="end"
+                        android:paddingStart="20dp"
+                        android:paddingBottom="5dp"
+                        android:text="Modo Scan"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/primary_dark"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/primary_dark" />
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp" />
+
+                    <net.steamcrafted.materialiconlib.MaterialIconView
+                        android:id="@+id/read_barcode"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        app:materialIcon="camera_iris"
+                        app:materialIconColor="@color/primary_dark"
+                        app:materialIconSize="140dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="hacer click para iniciar el scaneo"
+                        android:textAlignment="center" />
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="end"
+                        android:paddingStart="20dp"
+                        android:paddingBottom="5dp"
+                        android:text="Modo digitación"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/primary_dark"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/primary_dark" />
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <Button
+                        android:id="@+id/write_cc"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="15dp"
+                        android:text="@string/write_doc"
+                        android:textAllCaps="true"
+                        android:textColor="@color/gray"
+                        tools:ignore="RtlCompat,RtlHardcoded,RtlSymmetry" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Digite el número de identificación para iniciar la consulta"
+                        android:textAlignment="center" />
+
+                    <LinearLayout
+                        android:id="@+id/write"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
+                        android:gravity="center_horizontal"
+                        android:visibility="visible">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp">
+
+                            <EditText
+                                android:id="@+id/document"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="Número de documento"
+                                android:inputType="number"
+                                android:maxLength="11" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/sendDocument"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:backgroundTint="@color/btnBackground"
+                            app:fabSize="mini"
+                            app:srcCompat="@android:drawable/ic_menu_search" />
+                    </LinearLayout>
+
+                    <android.widget.TextView
+                        android:id="@+id/tvScanButtonError"
+                        android:layout_width="200dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="0dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:paddingTop="0dp"
+                        android:visibility="gone" />
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="0px"
+                        android:layout_height="0px"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+    </ScrollView>
+</layout>

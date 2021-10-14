@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "co.tecno.sersoluciones.analityco",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "properties": [],
+      "versionCode": 2007181533,
+      "versionName": "2007181533",
+      "enabled": true,
+      "outputFile": "app-release.apk"
+    }
+  ]
+}

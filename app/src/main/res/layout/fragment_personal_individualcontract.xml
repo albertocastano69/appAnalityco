@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="co.tecno.sersoluciones.analityco.ui.createPersonal.viewmodels.PersonalViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/controls_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/white"
+            android:descendantFocusability="beforeDescendants"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancel_button"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:padding="12dp"
+                android:text="@string/text_cancel"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:background="#ababab" />
+
+            <Button
+                android:id="@+id/submit_button"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-light"
+                android:padding="12dp"
+                android:text="@string/text_save"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/border_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="60dp"
+            android:background="#ababab" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/border_bottom"
+            android:fillViewport="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:cardBackgroundColor="@color/whiteTransparent"
+                    app:cardCornerRadius="1dp"
+                    app:cardElevation="1dp"
+                    app:cardUseCompatPadding="false">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="8dp">
+
+                            <ImageView
+                                android:id="@+id/icon_logo"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/profile_dummy"
+                                app:setLogoImage="@{viewModel.personal.Photo}"
+                                app:shapeAppearance="@style/ShapeAppearance.App.SmallComponent" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/basic_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/FilledBox.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_search"
+                                app:boxBackgroundColor="@android:color/transparent">
+
+                                <EditText
+                                    android:id="@+id/edtt_name"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="@string/str_name"
+                                    android:inputType="textCapCharacters"
+                                    android:maxLength="100"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.personal.Name}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/FilledBox.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/bg_search"
+                                app:endIconMode="clear_text">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtt_last_name"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="@string/str_last_name"
+                                    android:inputType="textCapCharacters"
+                                    android:maxLength="100"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.personal.LastName}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guide_center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_percent="0.5" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/ExposedDropdownMenu.App.TextInputLayout"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="4dp"
+                                    android:background="@drawable/bg_search"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guide_center"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:startIconDrawable="@drawable/ic_drop">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/rhAutoCompleteTextView"
+                                        style="@style/InnovoEditText"
+                                        android:hint="@string/label_rh"
+                                        android:inputType="none"
+                                        android:text="@={viewModel.personal.RH}" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/ExposedDropdownMenu.App.TextInputLayout"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:background="@drawable/bg_search"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/guide_center"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:startIconDrawable="@drawable/ic_gender">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/sexAutoCompleteTextView"
+                                        style="@style/InnovoEditText"
+                                        android:hint="@string/label_sex"
+                                        android:inputType="none"
+                                        android:text="@={viewModel.personal.Sex}" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/nationality_input_layout"
+                                style="@style/ExposedDropdownMenu.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/bg_search"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/guide_center"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:shapeAppearance="@style/ShapeAppearance.App.SmallComponent"
+                                app:startIconDrawable="@drawable/ic_flag">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/nationalityAutoCompleteTextView"
+                                    style="@style/InnovoEditText"
+                                    android:hint="@string/nacionality"
+                                    android:inputType="none" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/city_input_layout"
+                                style="@style/ExposedDropdownMenuText.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/bg_search"
+                                app:startIconDrawable="@drawable/ic_menu_search">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/cityAutoCompleteTextView"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="@string/str_digit_city_birth"
+                                    android:inputType="text"
+                                    android:maxLength="100"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.personal.CityOfBirthName}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/bg_search"
+                                android:padding="2dp">
+                                <EditText
+                                    android:id="@+id/edt_birth_date"
+                                    android:imeOptions="flagNoExtractUi"
+                                    style="@style/InnovoEditText"
+                                    android:layout_height="70dp"
+                                    android:gravity="center"
+                                    android:layout_marginEnd="10dp"
+                                    android:drawableLeft="@drawable/ic_calendar"
+                                    android:hint="dd/MMM/yyyy"
+                                    android:textSize="15sp"
+                                    />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+                        <RelativeLayout
+                            android:id="@+id/info_rh_sex"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/label_rh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginEnd="24dp"
+                                android:background="@drawable/background_black"
+                                android:fontFamily="sans-serif-light"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp"
+                                android:text="@string/label_rh"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/text_rh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="24dp"
+                                android:layout_toEndOf="@+id/label_rh"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@={viewModel.personal.RH}"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textStyle="bold" />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="24dp"
+                                android:layout_toStartOf="@+id/text_sex"
+                                android:background="@drawable/ic_gender" />
+
+                            <TextView
+                                android:id="@+id/text_sex"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="24dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@={viewModel.personal.Sex}"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="end"
+                            android:paddingStart="20dp"
+                            android:paddingBottom="5dp"
+                            android:text="Datos de Contacto"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorAccent" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/job_input_layout"
+                                style="@style/ExposedDropdownMenuText.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_search"
+                                app:startIconDrawable="@drawable/ic_menu_search">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/jobAutoCompleteTextView"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="OCUPACION"
+                                    android:inputType="text"
+                                    android:maxLength="100"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.personal.JobName}" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/dane_city_input_layout"
+                                style="@style/ExposedDropdownMenuText.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_search"
+                                app:startIconDrawable="@drawable/ic_menu_search">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/daneCityAutoCompleteTextView"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="@string/str_digit_local_city"
+                                    android:inputType="text"
+                                    android:maxLength="100"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.personal.CityName}" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/FilledBox.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_search"
+                                app:endIconMode="clear_text">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtt_address"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="@string/str_address"
+                                    android:inputType="text"
+                                    android:maxLength="100"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.personal.Address}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/FilledBox.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_search"
+                                app:endIconMode="clear_text">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtt_phone"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="TELEFONO"
+                                    android:inputType="phone"
+                                    android:maxLength="50"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.personal.PhoneNumber}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/FilledBox.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_search"
+                                app:boxBackgroundColor="@android:color/transparent">
+
+                                <EditText
+                                    android:id="@+id/edtt_email"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="@string/prompt_email"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLength="100"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.personal.Email}"
+                                    />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="end"
+                            android:paddingStart="20dp"
+                            android:paddingBottom="5dp"
+                            android:text="Datos de Emergencia"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorAccent" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/FilledBox.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_search"
+                                app:endIconMode="clear_text">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtt_nameContact"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="CONTACTO DE EMERGENCIA"
+                                    android:inputType="text"
+                                    android:maxLength="100"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.personal.EmergencyContact}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/FilledBox.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_search"
+                                app:endIconMode="clear_text">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edtt_phoneContact"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="TELEFONO DE EMERGENCIA"
+                                    android:inputType="phone"
+                                    android:maxLength="50"
+                                    android:maxLines="1"
+                                    android:text="@={viewModel.personal.EmergencyContactPhone}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

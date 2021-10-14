@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="co.tecno.sersoluciones.analityco.viewmodels.PersonalDailyViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="co.tecno.sersoluciones.analityco.EnrollmentActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/BaseTheme.AppBarOverlay"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_scrollFlags="scroll|enterAlways"
+                        app:popupTheme="@style/BaseTheme.PopupOverlay">
+
+                        <Button
+                            android:id="@+id/syncButton"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/ic_baseline_sync_24" />
+                    </androidx.appcompat.widget.Toolbar>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/option1Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/primary_dark"
+                            android:onClick="onClickOption"
+                            android:text="@string/option1"
+                            android:textAllCaps="false"
+                            android:textColor="@color/whiteTransparent"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/option2Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/primary_dark"
+                            android:onClick="onClickOption"
+                            android:text="@string/option2"
+                            android:textAllCaps="false"
+                            android:textColor="@color/whiteTransparent"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/option3Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/primary_dark"
+                            android:onClick="onClickOption"
+                            android:text="@string/option3"
+                            android:textAllCaps="false"
+                            android:textColor="@color/whiteTransparent"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/option4Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/primary_dark"
+                            android:onClick="onClickOption"
+                            android:text="@string/option4"
+                            android:textAllCaps="false"
+                            android:textColor="@color/whiteTransparent"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+
+                </com.google.android.material.appbar.AppBarLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/m_main_form_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toTopOf="@+id/textViewOnline"
+                app:layout_constraintTop_toBottomOf="@+id/topBar"
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_editor_absoluteX="0dp">
+
+                <include
+                    android:id="@+id/content_enrollment"
+                    layout="@layout/content_enrollment" />
+            </androidx.core.widget.NestedScrollView>
+
+            <TextView
+                android:id="@+id/textViewOnline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_light"
+                android:gravity="center"
+                android:text="@string/sin_internet"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/shadow"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/shape_gradient_top_shadow"
+            android:visibility="gone"
+            app:layout_anchor="@id/bottom_sheet" />
+
+        <View
+            android:id="@+id/shadow2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3c000000"
+            android:visibility="gone"
+            app:layout_anchor="@id/bottom_sheet" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:clipToPadding="true"
+            android:elevation="16dp"
+            android:fillViewport="true"
+            android:outlineProvider="none"
+            app:behavior_peekHeight="60dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/mid_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <ImageView
+                    android:id="@+id/af_background"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/gray_label"
+                    android:contentDescription="@string/analytico_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_tab"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/mid_guide"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+<!--                <TextView-->
+<!--                    android:id="@+id/af_indicator"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/af_background"-->
+<!--                    app:layout_constraintEnd_toEndOf="@id/af_background"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/icon_tab"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/af_background" />-->
+
+                <ImageView
+                    android:id="@+id/icon_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_tab"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/label_sliding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:text="Registros"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_tab"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/icon_tab" />
+
+                <View
+                    android:id="@+id/edge"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:background="#bab6b5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_tab" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edge" />
+
+                <ImageView
+                    android:id="@+id/icon_tab_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:onClick="hideBottomSheet"
+                    android:scaleType="center"
+                    android:background="@color/colorPrimary"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_tab" />
+                <TextView
+                    android:id="@+id/label_sliding1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:text="Registros"
+                    android:visibility="gone"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_tab_d"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/icon_tab_d" />
+                <ImageView
+                    android:id="@+id/closeBottomSheet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:src="@drawable/arrow_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_tab_d"
+                    app:layout_constraintTop_toTopOf="@+id/icon_tab_d" />
+                <TextView
+                    android:id="@+id/af_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:textColor="@color/dark"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:padding="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_tab_d" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_personal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:padding="2dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/af_indicator"
+                    tools:listitem="@layout/personal_realtime_item" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/overlayBlack"
+            android:elevation="20dp"
+            android:visibility="gone"
+            app:loadingApiStatus="@{viewModel.status}">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/loading_animation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/mProgressView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_overlay"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:layout_anchorGravity="center_vertical|center_horizontal" />
+
+        </LinearLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

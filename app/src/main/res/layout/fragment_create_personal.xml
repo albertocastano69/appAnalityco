@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/controls_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/white"
+        android:descendantFocusability="beforeDescendants"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-3dp"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:layout_marginTop="-3dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-light"
+            android:padding="16dp"
+            android:text="@string/text_cancel"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:background="#ababab" />
+
+        <Button
+            android:id="@+id/submit_button"
+            style="@style/Widget.Button.Green"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-3dp"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:layout_marginTop="-3dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-light"
+            android:padding="16dp"
+            android:text="@string/text_save"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/border_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50.5dp"
+        android:background="#ababab" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/border_bottom"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:cardBackgroundColor="@color/whiteTransparent"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="1dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:padding="10dp">
+
+                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                android:id="@+id/icon_edit_main_form"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="10dp"
+                                android:clickable="true"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:scaleType="center"
+                                app:materialIcon="pencil"
+                                app:materialIconColor="@color/colorAccent"
+                                app:materialIconSize="40dp" />
+
+                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                android:id="@+id/icon_logo"
+                                android:layout_width="190dp"
+                                android:layout_height="190dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:scaleType="fitCenter"
+                                app:materialIcon="account_circle"
+                                app:materialIconColor="@color/gray"
+                                app:materialIconSize="170dp" />
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab_remove"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:visibility="gone"
+                                app:backgroundTint="@color/pink"
+                                app:fabSize="mini"
+                                app:srcCompat="@android:drawable/ic_menu_delete" />
+
+                        </RelativeLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/bg_search"
+                            android:padding="7dp"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/edtt_name"
+                                style="@style/InnovoEditText"
+                                android:hint="@string/str_name"
+                                android:inputType="text"
+                                android:maxLength="200"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/label_rh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginStart="24dp"
+                            android:background="@drawable/background_black"
+                            android:fontFamily="sans-serif-light"
+                            android:paddingEnd="4dp"
+                            android:paddingStart="4dp"
+                            android:text="@string/label_rh"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_rh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="24dp"
+                            android:layout_toEndOf="@+id/label_rh"
+                            android:fontFamily="sans-serif-light"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_toStartOf="@+id/text_sex"
+                            android:background="@drawable/ic_gender" />
+
+                        <TextView
+                            android:id="@+id/text_sex"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="24dp"
+                            android:fontFamily="sans-serif-light"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="end"
+                        android:paddingBottom="5dp"
+                        android:paddingStart="20dp"
+                        android:text="Datos de Contacto"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorAccent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <co.tecno.sersoluciones.analityco.views.ClearebleAutoCompleteTextView
+                                android:id="@+id/edit_Job"
+                                style="@style/InnovoEditText"
+                                android:drawableLeft="@android:drawable/ic_menu_search"
+                                android:hint="OCUPACION"
+                                android:inputType="text"
+                                android:maxLength="100"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <co.tecno.sersoluciones.analityco.views.ClearebleAutoCompleteTextView
+                                android:id="@+id/edit_city"
+                                style="@style/InnovoEditText"
+                                android:drawableLeft="@android:drawable/ic_menu_search"
+                                android:hint="@string/str_digit_local_city"
+                                android:inputType="text"
+                                android:maxLength="100"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_address"
+                                style="@style/InnovoEditText"
+                                android:hint="@string/str_address"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_phone"
+                                style="@style/InnovoEditText"
+                                android:hint="TELEFONO"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <co.tecno.sersoluciones.analityco.views.ClearebleAutoCompleteTextView
+                                android:id="@+id/edit_eps"
+                                style="@style/InnovoEditText"
+                                android:drawableLeft="@android:drawable/ic_menu_search"
+                                android:hint="EPS"
+                                android:inputType="text"
+                                android:maxLength="100"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <co.tecno.sersoluciones.analityco.views.ClearebleAutoCompleteTextView
+                                android:id="@+id/edit_afp"
+                                style="@style/InnovoEditText"
+                                android:drawableLeft="@android:drawable/ic_menu_search"
+                                android:hint="AFP"
+                                android:inputType="text"
+                                android:maxLength="100"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="end"
+                        android:paddingBottom="5dp"
+                        android:paddingStart="20dp"
+                        android:text="Datos de Emergencia"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorAccent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_nameContact"
+                                style="@style/InnovoEditText"
+                                android:hint="CONTACTO DE EMERGENCIA"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_phoneContact"
+                                style="@style/InnovoEditText"
+                                android:hint="TELEFONO DE EMERGENCIA"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

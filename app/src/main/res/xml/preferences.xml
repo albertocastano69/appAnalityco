@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/pref_expiry_days">
+        <EditTextPreference
+            android:key="pref_key_company_days"
+            android:summary="@string/pref_summary_company_days"
+            android:title="@string/pref_title_company_days" />
+        <EditTextPreference
+            android:key="pref_key_employer_days"
+            android:summary="@string/pref_summary_employer_days"
+            android:title="@string/pref_title_employer_days" />
+        <EditTextPreference
+            android:key="pref_key_projects_days"
+            android:summary="@string/pref_summary_projects_days"
+            android:title="@string/pref_title_project_days" />
+        <EditTextPreference
+            android:key="pref_key_contracts_days"
+            android:summary="@string/pref_summary_contracts_days"
+            android:title="@string/pref_title_contract_days" />
+        <EditTextPreference
+            android:key="pref_key_personal_days"
+            android:summary="@string/pref_summary_personal_days"
+            android:title="@string/pref_title_personal_days" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/modulo_registrar_verificar">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_key_vibration"
+            android:summary="@string/pref_vibration_desc"
+            android:title="@string/pref_vibration" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_key_speak"
+            android:summary="@string/pref_speak_desc"
+            android:title="@string/pref_speak" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_key_default_start"
+            android:summary="@string/pref_default_start_desc"
+            android:title="@string/pref_default_start" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_key_default_requeriment_incomplete"
+            android:summary="@string/bloqueo_incumplimiento_summary"
+            android:title="@string/bloqueo_incumplimiento_title" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_key_default_entry"
+            android:summary="@string/inicio_sesion_consecutivo_summary"
+            android:title="@string/inicio_sesion_consecutivo_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_key_server_info"
+        android:title="@string/pref_server_info">
+
+        <EditTextPreference
+            android:key="pref_key_pass_server"
+            android:summary="@string/pref_summary_pass"
+            android:title="@string/pref_title_pass" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:enabled="false"
+            android:key="pref_key_bool_server"
+            android:summary="@string/pref_summary_bool_server"
+            android:title="@string/pref_bool_server" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:enabled="false"
+            android:key="pref_key_enable_registers"
+            android:summary="@string/pref_summary_enable_registers"
+            android:title="@string/pref_enable_registers" />
+
+        <EditTextPreference
+            android:defaultValue="@string/pref_value_ip_server"
+            android:enabled="false"
+            android:key="pref_key_ip_server"
+            android:summary="@string/pref_summary_ip_address_server"
+            android:title="@string/pref_title_ip_address_server" />
+        <EditTextPreference
+            android:defaultValue="@string/pref_value_port_server"
+            android:enabled="false"
+            android:key="pref_key_port_server"
+            android:summary="@string/pref_summary_port_server"
+            android:title="@string/pref_title_port_server" />
+
+    </PreferenceCategory>
+
+    <!--<PreferenceCategory-->
+    <!--android:title="@string/pref_server_lock" >-->
+    <!--<EditTextPreference-->
+    <!--android:key="pref_key_username"-->
+    <!--android:title="@string/username"-->
+    <!--android:summary="@string/pref_summary_username"-->
+    <!--android:defaultValue="@string/pref_value_username" />-->
+    <!--<EditTextPreference-->
+    <!--android:key="pref_key_password"-->
+    <!--android:title="@string/password"-->
+    <!--android:summary="@string/pref_summary_pass"-->
+    <!--android:defaultValue="@string/pref_value_password"/>-->
+
+    <!--</PreferenceCategory>-->
+</PreferenceScreen>

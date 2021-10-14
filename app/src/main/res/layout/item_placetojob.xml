@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="3dp"
+    android:layout_marginStart="3dp"
+    android:layout_marginTop="5dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardElevation="2dp"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardCornerRadius="3dp"
+    card_view:cardUseCompatPadding="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="0dp"
+            android:contentDescription="@string/str_phone"
+            android:scaleType="fitCenter"
+            android:src="@drawable/image_not_available"
+            android:transitionName="@string/img_transition"
+            tools:ignore="RtlCompat,RtlHardcoded"
+            tools:targetApi="lollipop" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_toEndOf="@+id/logo"
+            android:paddingLeft="5dp"
+            android:paddingTop="7dp"
+            android:paddingRight="5dp"
+            tools:ignore="RtlCompat">
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAllCaps="true"
+                android:text="Novaterra"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat,RtlHardcoded,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/text_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_name"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-light"
+                android:text="Novaterra"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:visibility="visible"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/text_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_sub"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Co-322342"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@android:color/black"
+                tools:ignore="RtlCompat,RtlHardcoded" />
+
+            <ImageView
+                android:id="@+id/icon_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_calendar"
+                android:maxLines="1"
+                android:layout_marginBottom="2dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/text_review"
+                android:layout_below="@+id/text_sub"
+                />
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_sub"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-light"
+                android:maxLines="1"
+                android:text="Co-322342"
+                android:layout_alignParentRight="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@android:color/black"
+                tools:ignore="RtlCompat,RtlHardcoded" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

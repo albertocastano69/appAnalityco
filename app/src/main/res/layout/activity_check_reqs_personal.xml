@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="co.tecno.sersoluciones.analityco.viewmodels.PersonalDailyViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CheckReqsPersonalActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="?attr/colorPrimary"
+                        app:layout_scrollFlags="scroll|enterAlways"
+                        app:popupTheme="@style/BaseTheme.PopupOverlay"
+                        app:subtitleTextColor="@color/white"
+                        app:titleTextColor="@color/white" >
+
+                       <Button
+                            android:id="@+id/syncButton"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/ic_baseline_sync_24" />
+                    </androidx.appcompat.widget.Toolbar>
+
+                    <LinearLayout
+                        android:id="@+id/buttons_selected"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/option1_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/primary_dark"
+                            android:onClick="onClickOption"
+                            android:text="@string/option1"
+                            android:textAllCaps="false"
+                            android:textColor="@color/whiteTransparent"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/option2_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/primary_dark"
+                            android:onClick="onClickOption"
+                            android:text="@string/option2"
+                            android:textAllCaps="false"
+                            android:textColor="@color/whiteTransparent"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/option3_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/primary_dark"
+                            android:onClick="onClickOption"
+                            android:text="@string/option3"
+                            android:textAllCaps="false"
+                            android:textColor="@color/whiteTransparent"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/option4_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/primary_dark"
+                            android:onClick="onClickOption"
+                            android:text="@string/option4"
+                            android:textAllCaps="false"
+                            android:textColor="@color/whiteTransparent"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/m_main_form_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
+                app:layout_constraintTop_toBottomOf="@+id/topBar">
+
+                <include
+                    android:id="@+id/content_ckecks_personal"
+                    layout="@layout/content_check_reqs_personal" />
+            </androidx.core.widget.NestedScrollView>
+
+            <LinearLayout
+                android:id="@+id/bottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/textViewOnline">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/dark"
+                    android:paddingTop="@dimen/margin_text"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/persona_en_horario"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_text"
+                        android:text="@string/no_permitido"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/title1" />
+
+                    <TextView
+                        android:id="@+id/subTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_text"
+                        android:text="@string/mensaje_horario"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/title2" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/subTitle">
+
+                        <Button
+                            android:id="@+id/allowIncome"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn_border_white"
+                            android:text="@string/permitir_ingreso"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toStartOf="@id/guideLine"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideLine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.6" />
+
+                        <Button
+                            android:id="@+id/denyIncome"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn_border_white"
+                            android:text="@string/siguiente"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/guideLine" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/register_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/primary"
+                    android:padding="@dimen/margin_text"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/mid_guide"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <TextView
+                        android:id="@+id/register_negative_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_text"
+                        android:text="@string/negative_title_1"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/register_button"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <Button
+                        android:id="@+id/register_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_border_white"
+                        android:text="@string/Registrar"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/mid_guide" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/inOut_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/primary"
+                    android:padding="@dimen/margin_text"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/inOut_negative_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_text"
+                        android:text="@string/horario_no_permitido"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toTopOf="@+id/buttons_bottom"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buttons_bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/mid_guide_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.5" />
+
+                        <Button
+                            android:id="@+id/out_button"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bt_register_out_blue"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/mid_guide_2" />
+
+                        <Button
+                            android:id="@+id/in_button"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bt_register_in_blue"
+                            android:textColor="@color/white"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/mid_guide_2"
+                            app:layout_constraintStart_toStartOf="parent" />
+                        <TextView
+                            android:id="@+id/register"
+                            android:layout_width="0dp"
+                            android:layout_height="53dp"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="18dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/mid_guide_2"
+                            app:layout_constraintStart_toStartOf="parent" />
+                        <TextView
+                            android:id="@+id/requeriment_incomplete"
+                            android:layout_width="0dp"
+                            android:layout_height="53dp"
+                            android:background="@drawable/background_text_requrimente_incompleted"
+                            android:gravity="center"
+                            android:text="NO SE PERMITE EL INGRESO"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            android:textSize="18dp"
+                            android:textColor="@color/bar_undecoded"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/mid_guide_2"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewOnline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_light"
+                android:gravity="center"
+                android:text="@string/sin_internet"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/shadow"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/shape_gradient_top_shadow"
+            android:visibility="gone"
+            app:layout_anchor="@id/bottom_sheet" />
+
+        <View
+            android:id="@+id/shadow2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3c000000"
+            android:visibility="gone"
+            app:layout_anchor="@id/bottom_sheet" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="true"
+            android:visibility="gone"
+            android:elevation="16dp"
+            android:fillViewport="true"
+            android:outlineProvider="none"
+            app:behavior_peekHeight="60dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/middle_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <ImageView
+                    android:id="@+id/af_background"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/gray_label"
+                    android:contentDescription="@string/analytico_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_tab"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/middle_guide"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/af_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/af_background"
+                    app:layout_constraintEnd_toEndOf="@id/af_background"
+                    app:layout_constraintStart_toEndOf="@id/icon_tab"
+                    app:layout_constraintTop_toTopOf="@+id/af_background" />
+
+                <ImageView
+                    android:id="@+id/icon_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_tab"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/label_sliding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:text="Registros"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_tab"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/icon_tab" />
+
+                <View
+                    android:id="@+id/edge"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:background="#bab6b5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_tab" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edge" />
+
+                <ImageView
+                    android:id="@+id/icon_tab_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="hideBottomSheet"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_tab_d"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_tab" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_personal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:padding="2dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_tab_d"
+                    tools:listitem="@layout/personal_realtime_item" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/positive_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_curve_arrow"
+            android:visibility="gone"
+            app:fabSize="normal" />
+
+        <LinearLayout
+            android:id="@+id/m_progress_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/overlayBlack"
+            android:elevation="20dp"
+            android:visibility="gone"
+            app:loadingApiStatus="@{viewModel.status}">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/loading_animation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

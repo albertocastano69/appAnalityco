@@ -1,0 +1,208 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "co.tecno.sersoluciones.analityco"
+        minSdkVersion 21
+        targetSdkVersion 29
+        //versionCode 2022018
+        //noinspection HighAppVersionCode
+        versionCode 2007181540
+        //versionName "1.2.11"
+        versionName "1.6.9"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        //manifestPlaceholders = [HOCKEYAPP_APP_ID: "cc03090826aa4b7895c0cc79c6b75ac9"]
+//        ndk {
+//            abiFilters "armeabi-v7a", "arm64-v8a"
+//        }
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        key {
+            keyAlias 'sersoluciones'
+            keyPassword 'Sersoluciones01'
+//            storeFile file('C:\\Users\\gus_a\\AndroidStudioProjects\\Innovodata\\debug.keystore')
+            storePassword 'android'
+        }
+    }
+    buildTypes {
+        debug {
+            //ext.alwaysUpdateBuildId = false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.key
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4096M"
+        preDexLibraries true
+    }
+}
+
+static def getVersionCodeTimestamp() {
+    def currentDate = new Date()
+    def formattedDate = currentDate.format('yyMMddHHmm')
+    def code = formattedDate.toInteger()
+    return code
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['.jar', '.so'])
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    //implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
+//    androidTestImplementation 'androidx.test:runner:1.1.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+//    implementation('com.mapbox.mapboxsdk:mapbox-android-sdk:5.1.0@aar') {
+//        transitive = true
+//    }
+    def lastestMaterialDrawerRelease = '6.1.2'
+    implementation "com.mikepenz:materialdrawer:${lastestMaterialDrawerRelease}"
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'androidx.preference:preference:1.1.1'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.firebase:firebase-jobdispatcher:0.6.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-basement:17.2.1'
+    implementation 'com.google.android.gms:play-services-safetynet:17.0.0'
+    implementation 'com.google.android.gms:play-services-vision:20.0.0'
+    implementation 'com.google.firebase:firebase-core:17.4.1'
+    implementation 'com.google.firebase:firebase-messaging:20.1.5'
+    implementation 'com.google.android.libraries.places:places:2.2.0'
+
+    implementation 'net.steamcrafted:materialiconlib:1.1.5'
+//    implementation 'com.github.jorgecastilloprz:fillableloaders:1.03@aar'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.splitwise:tokenautocomplete:2.0.8@aar'
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
+
+    implementation 'id.zelory:compressor:2.1.0'
+    implementation 'com.ramotion.foldingcell:folding-cell:1.2.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    kapt 'com.jakewharton:butterknife-compiler:10.2.0'
+
+    // Glide for images
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    kapt 'com.github.bumptech.glide:annotations:4.11.0'
+
+    implementation 'com.caverock:androidsvg:1.2.1'
+
+    //Graficas
+    // implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    implementation 'com.github.sersoluciones:face-detector-ser:v1.3.0'
+    implementation(name: 'barcodedetectorser', ext: 'aar')
+//    implementation(name: 'facedetectorser', ext: 'aar')
+
+    def appCenterSdkVersion = '3.2.1'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+    implementation 'androidx.exifinterface:exifinterface:1.2.0'
+//    implementation project(':facedetectorser')
+
+    //retrofit
+    def version_retrofit = '2.6.2'
+    def version_retrofit_coroutines_adapter = '0.9.2'
+    implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$version_retrofit"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$version_retrofit_coroutines_adapter"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.2.1"
+
+    // Moshi for parsing the JSON format
+    def version_moshi = '1.8.0'
+    implementation "com.squareup.moshi:moshi:$version_moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
+
+    // view model
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+
+
+    // Coroutines for getting off the UI thread
+    def version_kotlin_coroutines = "1.3.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_kotlin_coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_kotlin_coroutines"
+
+    // data binding
+    kapt 'com.android.databinding:compiler:3.1.4'
+
+    // signalR
+    implementation "com.microsoft.signalr:signalr:5.0.0-preview.3.20215.14"
+    implementation group: 'org.slf4j', name: 'slf4j-android', version: '1.7.7'
+
+    //dagger for dependency inyector
+    implementation 'com.google.dagger:dagger:2.37'
+    implementation "com.google.dagger:dagger-android:2.37"
+    kapt 'com.google.dagger:dagger-compiler:2.23.2'
+    kapt "com.google.dagger:dagger-android-processor:2.23.2"
+
+    // Room database
+    def version_room = "2.2.5"
+    implementation "androidx.room:room-runtime:$version_room"
+    kapt "androidx.room:room-compiler:$version_room"
+
+    // WorkManager
+    def version_work = "2.3.4"
+    implementation "androidx.work:work-runtime-ktx:$version_work"
+
+
+
+
+}
+apply plugin: 'com.google.gms.google-services'
+
+kapt {
+    generateStubs = true
+
+}

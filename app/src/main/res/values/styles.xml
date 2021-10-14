@@ -1,0 +1,216 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+        <item name="android:windowContentTransitions">true</item>
+        <!--<item name="android:windowAllowEnterTransitionOverlap">true</item>-->
+        <!--<item name="android:windowAllowReturnTransitionOverlap">true</item>-->
+        <!--<item name="android:windowSharedElementEnterTransition">@android:transition/move</item>-->
+        <!--<item name="android:windowSharedElementExitTransition">@android:transition/move</item>-->
+
+
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:dropDownListViewStyle">@style/BaseTheme.MyListView</item>
+    </style>
+
+    <style name="BaseTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="BaseTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="BaseTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Widget.Button.Blue" parent="android:Widget">
+        <item name="android:textColor">@color/btnText</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:padding">20dp</item>
+        <item name="backgroundTint">@color/btnBackground</item>
+        <item name="elevation">2dp</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+
+    <style name="Widget.Button.Green" parent="android:Widget">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">20dp</item>
+        <item name="backgroundTint">@color/colorAccent</item>
+        <item name="elevation">2dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+    <style name="Widget.Button.Cancel" parent="android:Widget">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">20dp</item>
+        <item name="backgroundTint">@color/back_transparent</item>
+        <item name="elevation">2dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+
+    <style name="Widget.Button.AlertDialog" parent="android:Widget">
+        <item name="android:textColor">@color/colorGreenDisabled</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:background">@drawable/background_alert_dialog</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="Widget.Button.Date" parent="android:Widget">
+        <item name="background">@drawable/border</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:paddingLeft">30dip</item>
+        <item name="android:paddingRight">30dip</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:drawableLeft">@drawable/ic_calendar</item>
+    </style>
+
+    <style name="Widget.Button.NegativeButton" parent="android:Widget">
+        <item name="android:textColor">@color/btnText</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">17dp</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="elevation">1dp</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+
+    <style name="Widget.Button.Intro" parent="android:Widget">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">17dp</item>
+        <item name="backgroundTint">@color/colorButtonLogin</item>
+        <item name="elevation">5dp</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="BaseTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <!--  <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>-->
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="BaseTheme.MyListView" parent="android:style/Widget.ListView.DropDown">
+        <item name="android:listSelector">@drawable/popup_background</item>
+        <item name="android:divider">@color/colorRadioButtonOff</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabMaxWidth">0dp</item>
+        <item name="tabIndicatorColor">@color/dark_gray</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabPaddingStart">4dp</item>
+        <item name="tabPaddingEnd">4dp</item>
+        <item name="tabBackground">@drawable/tab_color_selector</item>
+        <item name="tabTextAppearance">@style/TabTextAppearance</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/whiteTransparent</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="InnovoEditText" parent="@android:style/Widget.EditText">
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:layout_marginEnd">6dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AnalitycoEditText" parent="@android:style/Widget.EditText">
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="ThemeToolbar" parent="Theme.AppCompat.Light">
+
+        <!-- navigation icon color -->
+        <item name="colorControlNormal">@android:color/white</item>
+
+        <!-- color of the menu overflow icon -->
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <!--                <item name="colorOnSurface">@color/colorUnderline</item>-->
+        <!--        <item name="colorSurface">@color/colorUnderline</item>-->
+        <item name="colorError">@color/red</item>
+        <!--        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>-->
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent.Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeBottomLeft">10dp</item>
+        <item name="cornerSizeBottomRight">10dp</item>
+    </style>
+
+    <style name="ExposedDropdownMenu.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
+    </style>
+
+    <style name="ExposedDropdownMenuText.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
+    </style>
+
+
+    <style name="FilledBox.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="co.tecno.sersoluciones.analityco.fragments.RegisterStepOneFragment">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:background="@android:color/white"
+        android:visibility="gone"
+        app:menu="@menu/bottom_navigation_main" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="beforeDescendants"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".Principal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:cardElevation="1dp"
+                card_view:cardBackgroundColor="@android:color/transparent"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:id="@+id/email_login_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/whiteTransparent"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="8dp">
+
+                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                android:id="@+id/icon_logo"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:scaleType="fitCenter"
+                                app:materialIcon="file_import"
+                                app:materialIconColor="@color/gray"
+                                app:materialIconSize="140dp" />
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab_remove"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_margin="5dp"
+                                app:backgroundTint="@color/pink"
+                                app:fabSize="mini"
+                                app:srcCompat="@android:drawable/ic_menu_delete"
+                                tools:ignore="RtlHardcoded" />
+                        </RelativeLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_name"
+                                style="@style/InnovoEditText"
+                                android:hint="@string/str_name"
+                                android:inputType="text"
+                                android:maxLength="200"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_address"
+                                style="@style/InnovoEditText"
+                                android:hint="@string/str_address"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <co.tecno.sersoluciones.analityco.views.ClearebleAutoCompleteTextView
+                                android:id="@+id/edit_city"
+                                style="@style/InnovoEditText"
+                                android:drawableLeft="@android:drawable/ic_menu_search"
+                                android:hint="@string/str_digit_city"
+                                android:inputType="text"
+                                android:maxLength="100"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        tools:ignore="RtlHardcoded">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/str_geofence"
+                            android:textAllCaps="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorAccent" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/whiteTransparent"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="8dp"
+                                android:text="Editar Geocerca:"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textStyle="normal" />
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="10dp"
+                                app:backgroundTint="@color/btnBackground"
+                                app:srcCompat="@android:drawable/ic_dialog_map" />
+
+                        </RelativeLayout>
+
+                        <android.widget.TextView
+                            android:id="@+id/tvGeofenceError"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="-20dp"
+                            android:layout_marginRight="15dp"
+                            android:paddingTop="0dp"
+                            android:visibility="gone" />
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+
+                        <RelativeLayout
+                            android:id="@+id/layout_image_map"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:gravity="center_horizontal"
+                            android:padding="10dp"
+                            android:visibility="gone">
+
+                            <FrameLayout
+                                android:id="@+id/container_map"
+                                android:layout_width="300dp"
+                                android:layout_height="300dp"
+                                tools:layout_editor_absoluteX="8dp"
+                                tools:layout_editor_absoluteY="8dp" />
+                        </RelativeLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.legacy.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardBackgroundColor="@android:color/white"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardUseCompatPadding="true"
+                tools:ignore="UnusedAttribute">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/negative_button"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="20dp"
+                            android:text="@string/cancel_button"
+                            android:textAllCaps="true"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/positive_button"
+                            style="@style/Widget.Button.Green"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/text_aceptar" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/frame_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#56000000"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="8dp"
+            app:layout_anchorGravity="center_vertical|center_horizontal" />
+
+    </FrameLayout>
+</FrameLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item>
+        <shape
+            android:innerRadius="2dp"
+            android:shape="oval"
+            android:thicknessRatio="2"
+            android:useLevel="false" >
+
+            <solid android:color="@android:color/darker_gray" />
+
+            <stroke
+                android:width="0dp"
+                android:color="@color/colorRadioButtonOff" />
+        </shape>
+    </item>
+    <item
+        android:bottom="15dp"
+        android:drawable="@drawable/ic_sort_descending_white"
+        android:left="15dp"
+        android:right="15dp"
+        android:top="15dp" />
+</layer-list>

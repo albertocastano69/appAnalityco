@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="co.tecno.sersoluciones.analityco.ui.createPersonal.adapters.DataItemListAdapter.OnClickListener" />
+
+        <variable
+            name="item"
+            type="co.tecno.sersoluciones.analityco.models.ProjectList" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="3dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> clickListener.onClick(item)}"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:visibility="gone">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.6" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.9" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <ImageView
+                    android:id="@+id/job_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_job"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guideStart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/job_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="@string/vigencia_empresa_asociada"
+                    android:textColor="@color/text_tab"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guide1"
+                    app:layout_constraintStart_toStartOf="@id/guideStart"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/iconHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/guide1"
+                    app:materialIcon="calendar"
+                    app:materialIconColor="#b3000000"
+                    app:materialIconSize="20dp" />
+
+                <TextView
+                    android:id="@+id/text_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@id/iconHeader" />
+
+                <ImageView
+                    android:id="@+id/image_dots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_dots_vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guide2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0dp"
+                    android:contentDescription="@string/str_phone"
+                    android:scaleType="fitCenter"
+                    app:setLogoImage="@{item.Logo}"
+                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                <ImageView
+                    android:id="@+id/state_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:rotation="180"
+                    android:visibility="gone"
+                    app:imgValidateFinishDate="@{item.FinishDate}" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_toEndOf="@+id/logo"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="10dp"
+                    tools:ignore="RtlCompat">
+
+                    <TextView
+                        android:id="@+id/text_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toStartOf="@+id/btn_edit"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-light"
+                        android:maxLines="1"
+                        android:text="@{item.Name}"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/black"
+                        tools:ignore="RtlCompat,RtlHardcoded,RtlSymmetry" />
+
+                    <TextView
+                        android:id="@+id/text_sub_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_name"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_toStartOf="@+id/btn_edit"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-light"
+                        android:maxLines="1"
+                        android:text="@{item.CompanyName}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@android:color/black"
+                        tools:ignore="RtlCompat" />
+
+                    <TextView
+                        android:id="@+id/label_validity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_sub_name"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="2dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-light"
+                        android:maxLines="1"
+                        android:text="@{item.Address}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat,RtlHardcoded" />
+
+                    <net.steamcrafted.materialiconlib.MaterialIconView
+                        android:id="@+id/icon_date"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/text_sub_name"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_toEndOf="@+id/label_validity"
+                        android:scaleType="center"
+                        android:visibility="gone"
+                        app:materialIcon="calendar"
+                        app:materialIconColor="#b3000000"
+                        app:materialIconSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/text_validity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_sub_name"
+                        android:layout_marginBottom="2dp"
+                        android:layout_toEndOf="@+id/icon_date"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-light"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@android:color/black"
+                        tools:ignore="RtlCompat,RtlHardcoded" />
+
+                    <ImageView
+                        android:id="@+id/icon_is_active"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/text_sub_name"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginRight="5dp"
+                        android:contentDescription="@string/str_phone"
+                        android:scaleType="fitCenter"
+                        tools:ignore="RtlCompat,RtlHardcoded" />
+
+                    <TextView
+                        android:id="@+id/text_active"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_sub_name"
+                        android:layout_marginBottom="2dp"
+                        android:layout_toStartOf="@+id/icon_is_active"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        tools:ignore="RtlCompat,RtlHardcoded" />
+
+                    <ImageView
+                        android:id="@+id/btn_edit"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:clickable="true"
+                        android:contentDescription="@string/str_phone"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:scaleType="fitCenter"
+                        tools:ignore="RtlCompat,RtlHardcoded" />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

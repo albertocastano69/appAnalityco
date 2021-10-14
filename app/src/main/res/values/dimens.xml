@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="user_profile_avatar_size">200dp</dimen>
+    <dimen name="camera_focus_area_size">15dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="text_margin">16dp</dimen>
+
+
+    <dimen name="chip_padding">5dp</dimen>
+
+    <dimen name="padding_top">4dp</dimen>
+    <dimen name="margin_text">5dp</dimen>
+
+    <dimen name="survey_details_margin">10dp</dimen>
+    <dimen name="subtitle_margin">17dp</dimen>
+    <dimen name="card_item_margin">5dp</dimen>
+    <dimen name="card_padding">7dp</dimen>
+    <dimen name="text_margin_end">5dp</dimen>
+    <dimen name="symptom_card_height">50dp</dimen>
+
+    <dimen name="subtitle_size">18sp</dimen>
+    <dimen name="title_size">22sp</dimen>
+
+
+</resources>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <FrameLayout
+        android:id="@+id/container_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/white"
+        android:descendantFocusability="beforeDescendants"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/previous_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-3dp"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:layout_marginTop="-3dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:fontFamily="sans-serif-light"
+            android:padding="16dp"
+            android:text="@string/text_previous"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:background="#ababab" />
+
+        <Button
+            android:id="@+id/next_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-3dp"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:layout_marginTop="-3dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-light"
+            android:padding="16dp"
+            android:text="@string/text_next"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/submit_button"
+            style="@style/Widget.Button.Green"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-3dp"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:layout_marginTop="-3dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-light"
+            android:padding="16dp"
+            android:text="@string/text_end"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/image_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/controls"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:id="@+id/layoutSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/controls"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            android:id="@+id/icon_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            app:materialIcon="city"
+            app:materialIconColor="@color/md_white_1000"
+            app:materialIconSize="36dp" />
+
+        <Spinner
+            android:id="@+id/spinnerBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:popupTheme="@android:style/ThemeOverlay.Material.Dark" />
+
+    </LinearLayout>
+
+    <co.tecno.sersoluciones.analityco.views.CustomViewPager
+        android:id="@+id/register_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/layoutSpinner" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50.5dp"
+        android:background="#ababab" />
+
+</RelativeLayout>

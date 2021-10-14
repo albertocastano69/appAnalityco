@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="co.tecno.sersoluciones.analityco">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".ApplicationContext"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/BaseTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="HardcodedDebugMode">
+        <activity
+            android:name=".individualContract.SingleContract"
+            android:label="@string/title_activity_single_contract"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".SurveyDetailsActivity"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".geofences.GeofenceGoogleActivity"
+            android:label="@string/title_activity_geofence_google"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".SelectCompanyPermissions"
+            android:theme="@style/BaseTheme.NoActionBar" /> <!-- [START fcm_default_icon] -->
+        <!--
+             Set custom default icon. This is used when no icon is set for incoming notification messages.
+             See README(https://goo.gl/l4GJaQ) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@android:drawable/ic_dialog_info" />
+        <!--
+           Set color used with incoming notification messages. This is used when no color is set for the incoming
+           notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" /> <!-- [END fcm_default_icon] -->
+        <!-- [START fcm_default_channel] -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel"
+            android:value="@string/default_notification_channel_id" /> <!-- [END fcm_default_channel] -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode,face" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".SplashActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.SplashActivity" />
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:parentActivityName=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.SplashActivity" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="co.tecno.sersoluciones.analityco.MAIN_ACTIVITY_TARGET" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:label="@string/filter_view_http_analityco">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="acceso.analityco.com"
+                    android:pathPrefix="/AddSession"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UserProfileActivity"
+            android:label="@string/title_activity_user_profile"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SettingActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+        <activity
+            android:name=".CompanyListActivity"
+            android:label="@string/title_activity_company_list"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+        <activity
+            android:name=".CompanyActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_company"
+            android:parentActivityName=".CompanyListActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.CompanyListActivity" />
+        </activity>
+        <activity
+            android:name=".SortCompanyActivity"
+            android:label="@string/title_activity_company"
+            android:parentActivityName=".CompanyListActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.CompanyListActivity" />
+        </activity>
+        <activity
+            android:name=".SortEmployerActivity"
+            android:label="@string/title_activity_company"
+            android:parentActivityName=".EmployersListActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.EmployersListActivity" />
+        </activity>
+        <activity
+            android:name=".SortProjectActivity"
+            android:label="@string/title_activity_company"
+            android:parentActivityName=".ProjectsListActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.ProjectsListActivity" />
+        </activity>
+        <activity
+            android:name=".SettingsGeofenceActivity"
+            android:parentActivityName=".geofences.GeofenceGoogleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.geofences.GeofenceGoogleActivity" />
+        </activity>
+        <activity
+            android:name=".SortContractActivity"
+            android:label="@string/title_activity_company"
+            android:parentActivityName=".ContractsListActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.ContractsListActivity" />
+        </activity>
+        <activity
+            android:name=".ContractActivity"
+            android:label="@string/title_activity_company"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+        <activity
+            android:name=".EmployersListActivity"
+            android:label="@string/title_activity_employers_list"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+        <activity
+            android:name=".EmployerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_company"
+            android:parentActivityName=".EmployersListActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.EmployersListActivity" />
+        </activity>
+        <activity
+            android:name=".DetailsEmployerActivity"
+            android:label=""
+            android:parentActivityName=".EmployersListActivity"
+            android:theme="@style/BaseTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.EmployersListActivity" />
+        </activity>
+        <activity
+            android:name=".ProjectActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ProjectsListActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ContractsListActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AddSesionActivity"
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+        <activity
+            android:name=".PersonalListActivity"
+            android:label="@string/title_activity_personal_list"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.MainActivity" />
+        </activity>
+
+        <activity android:name=".createCar.CarsListActivity"
+            android:label="@string/vehiculos"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/BaseTheme.NoActionBar"/>
+        <activity
+
+            android:name=".SortPersonalActivity"
+            android:label="@string/title_activity_company"
+            android:parentActivityName=".PersonalListActivity"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.PersonalListActivity" />
+        </activity>
+        <activity
+            android:name=".EnrollmentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".nav.CreatePersonalActivity"
+            android:label="@string/title_activity_create_personal"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".individualContract.CreateIndividualContractActivity"
+            android:label="@string/title_activity_create_indivudualcontract"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PersonalAddContract"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".DetailsCompanyActivityTabs"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_details_company_tabs"
+            android:theme="@style/BaseTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".NewUserAdminActivity"
+            android:label="@string/title_activity_new_user_admin"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".DetailsProjectActivityTabs"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_details_project_tabs"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".DetailsContractsActivityTabs"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_details_project_tabs"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".DetailsPersonalActivityTabs"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_details_project_tabs"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity android:name=".DetailsCarActivityTabs"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_details_car_tabs"
+            android:theme="@style/BaseTheme.NoActionBar"/>
+        <activity
+            android:name=".individualContract.DetailsSingleContractActivityTabs"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_details_single_contacts_tabs"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditInfoProjectActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_edit_info_project_fragment"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".EditInfoContractActivity"
+            android:label="@string/title_activity_edit_info_project_fragment"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".EditInfoPersonalActivity"
+            android:label="@string/title_activity_edit_info_project_fragment"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".JoinPersonalWizardActivity"
+            android:label="@string/title_activity_personal_wizard"
+            android:parentActivityName=".PersonalListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.PersonalListActivity" />
+        </activity>
+        <activity
+            android:name=".JoinPersonalContractActivity"
+            android:label="@string/title_activity_personal_wizard"
+            android:parentActivityName=".PersonalListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.PersonalListActivity" />
+        </activity>
+        <activity
+            android:name=".CheckReqsPersonalActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_check_reqs_personal"
+            android:parentActivityName=".EnrollmentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/BaseTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="co.tecno.sersoluciones.analityco.EnrollmentActivity" />
+        </activity>
+        <activity
+            android:name=".NotificationList"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name="co.com.sersoluciones.barcodedetectorser.BarcodeDecodeSerActivity"
+            android:clearTaskOnLaunch="true"
+            android:label="@string/title_activity_decode_barcode"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/BaseTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- <activity -->
+        <!-- android:name="co.com.sersoluciones.barcodedetectorser.zxing.CaptureActivity" -->
+        <!-- android:clearTaskOnLaunch="true" -->
+        <!-- android:screenOrientation="sensorLandscape" -->
+        <!-- android:stateNotNeeded="true" -->
+        <!-- android:theme="@style/CaptureTheme" -->
+        <!-- android:windowSoftInputMode="stateAlwaysHidden" /> -->
+        <activity
+            android:name="co.com.sersoluciones.facedetectorser.FaceTrackerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
+        <activity
+            android:name=".DasboardWebActivity"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".ActivityCapture"
+            android:theme="@style/BaseTheme.NoActionBar" />
+        <activity
+            android:name=".JoinPersonalProjectWizardActivity"
+            android:label="@string/title_activity_personal_wizard"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseTheme.NoActionBar" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <provider
+            android:name=".providers.DBContentProvider"
+            android:authorities="co.tecno.sersoluciones.DBContentProvider"
+            android:enabled="true"
+            android:exported="false"
+            android:readPermission="com.example.read" />
+
+        <service android:name=".services.CrudIntentService" />
+        <service android:name=".services.CRUDService" /> <!-- [START firebase_service] -->
+        <service
+            android:name=".firebase.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- [END firebase_service] -->
+        <service
+            android:name=".firebase.MyJobService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".services.LocationUpdateService"
+            android:enabled="true"
+            android:foregroundServiceType="location" />
+        <service
+            android:name=".services.UpdateDBService"
+            android:enabled="true" />
+
+        <receiver android:name=".broadcasts.SyncDBBroadCast" />
+        <receiver
+            android:name=".broadcasts.AppStartReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.example.arthas.start" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".services.ReportJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+
+</manifest>

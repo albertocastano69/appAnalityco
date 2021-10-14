@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="200"
+        android:title="@string/action_details"
+        android:icon="@drawable/ic_baseline_pending_24"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/Sync"
+        android:orderInCategory="100"
+        android:title="@string/sync"
+        android:icon="@drawable/ic_baseline_sync_24"
+        app:showAsAction="always"/>
+</menu>

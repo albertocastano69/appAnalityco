@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/labelConfirmar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONFIRAMR SOLICITUD"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/black_alpha"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/labelsubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Esta solicitud sera tramitada por el(los) usuario(s)"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/labelEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="operador.pyto.guayacan@gmail.com"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/Cancel"
+            style="@style/Widget.Button.AlertDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel_button"
+            android:backgroundTint="@color/whiteTransparent"
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Aceptar"
+            style="@style/Widget.Button.AlertDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/whiteTransparent"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="@string/text_aceptar" />
+    </LinearLayout>
+</LinearLayout>

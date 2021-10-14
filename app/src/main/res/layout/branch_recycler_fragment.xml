@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:paddingBottom="8dp"
+    android:paddingStart="10dp"
+    android:paddingTop="8dp"
+    tools:ignore="RtlCompat,RtlSymmetry">
+
+    <TextView
+        android:id="@android:id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/icon_location"
+        android:fontFamily="sans-serif-light"
+        android:gravity="start"
+        android:textAlignment="viewStart"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
+
+    <net.steamcrafted.materialiconlib.MaterialIconView
+        android:id="@+id/icon_location"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="50dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_toStartOf="@+id/view_align_end"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        app:materialIcon="map_marker"
+        app:materialIconColor="@color/dark_gray"
+        app:materialIconSize="24dp" />
+
+    <ImageButton
+        android:id="@+id/icon_cancel"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toStartOf="@+id/view_align_end"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/ic_arrow_back_ripple"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/view_align_end"
+        android:layout_alignParentEnd="true"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+</RelativeLayout>

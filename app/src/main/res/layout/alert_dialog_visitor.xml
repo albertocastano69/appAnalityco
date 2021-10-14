@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <TextView
+        android:id="@+id/label_visitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visitante"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorAccent"/>
+    <TextView
+        android:id="@+id/label_descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="no activo en este proyecto"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="2dp"
+        android:textColor="@color/black_alpha"
+        android:textSize="20dp"
+        android:layout_toRightOf="@+id/label_visitor"/>
+    <TextView
+        android:id="@+id/label_one_more_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_descripcion"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black_alpha"
+        android:text="¿Desea darle un día mas?"
+        />
+    <TextView
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/label_one_more_day"
+        android:textSize="20dp"
+        android:textColor="@color/colorAccent"
+        android:paddingBottom="10dp"
+        android:text="Cancelar"
+        />
+    <TextView
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_one_more_day"
+        android:textSize="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="80dp"
+        android:textColor="@color/colorAccent"
+        android:paddingBottom="10dp"
+        android:text="Aceptar" />
+</RelativeLayout>

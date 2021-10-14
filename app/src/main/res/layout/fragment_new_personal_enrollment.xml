@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- <include layout="@layout/content_project"
+         android:id="@+id/form"/>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/formNewUser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:cardElevation="1dp"
+                card_view:cardBackgroundColor="@android:color/transparent"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/whiteTransparent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="Nombre:"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/accent"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/name_personal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_below="@+id/header_img"
+                                android:layout_margin="5dp"
+                                android:fontFamily="sans-serif-light"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@android:color/black" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="CC:"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/accent"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/id_personal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_below="@+id/header_img"
+                                android:layout_margin="5dp"
+                                android:fontFamily="sans-serif-light"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@android:color/black" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:padding="10dp">
+
+                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                android:id="@+id/icon_logo"
+                                android:layout_width="190dp"
+                                android:layout_height="190dp"
+                                android:scaleType="fitCenter"
+                                app:materialIcon="account_circle"
+                                app:materialIconColor="@color/gray"
+                                app:materialIconSize="170dp" />
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab_remove"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:visibility="gone"
+                                app:backgroundTint="@color/pink"
+                                app:fabSize="mini"
+                                app:srcCompat="@android:drawable/ic_menu_delete" />
+
+                        </RelativeLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/bg_search"
+                            android:padding="7dp"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/edtt_name"
+                                style="@style/InnovoEditText"
+                                android:hint="@string/str_name"
+                                android:inputType="text"
+                                android:maxLength="200"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <!--
+                                            <android.support.design.widget.TextInputLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="10dp"
+                                                android:visibility="gone"
+                                                android:id="@+id/editTex_cc"
+                                                android:background="@drawable/bg_search"
+                                                android:padding="7dp">
+
+                                                <EditText
+                                                    android:id="@+id/edtt_identification"
+                                                    style="@style/InnovoEditText"
+                                                    android:hint="CC"
+                                                    android:inputType="text"
+                                                    android:maxLength="50"
+                                                    android:maxLines="1" />
+
+                                            </android.support.design.widget.TextInputLayout>
+
+                        -->
+                        <Spinner
+                            android:id="@+id/spinner_contract"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_background"
+                            android:popupBackground="@android:color/white"
+                            android:visibility="gone" />
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+
+                        <!--   <Spinner
+                               android:id="@+id/spinner_job"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:background="@drawable/spinner_background"
+                               android:popupBackground="@android:color/white" />-->
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <co.tecno.sersoluciones.analityco.views.ClearebleAutoCompleteTextView
+                                android:id="@+id/edit_Job"
+                                style="@style/InnovoEditText"
+                                android:drawableLeft="@android:drawable/ic_menu_search"
+                                android:hint="OCUPACION"
+                                android:inputType="text"
+                                android:maxLength="100"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/work"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <co.tecno.sersoluciones.analityco.views.DelayAutoCompleteTextView
+                                android:id="@+id/edit_position"
+                                style="@style/InnovoEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/text_cargo"
+                                android:imeOptions="flagNoExtractUi|actionSearch"
+                                android:inputType="textCapSentences" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <!-- <Spinner
+                             android:id="@+id/spinner_position"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:background="@drawable/spinner_background"
+                             android:popupBackground="@android:color/white" />-->
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <co.tecno.sersoluciones.analityco.views.ClearebleAutoCompleteTextView
+                                android:id="@+id/edit_city"
+                                style="@style/InnovoEditText"
+                                android:drawableLeft="@android:drawable/ic_menu_search"
+                                android:hint="@string/str_digit_city"
+                                android:inputType="text"
+                                android:maxLength="100"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_address"
+                                style="@style/InnovoEditText"
+                                android:hint="@string/str_address"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_email"
+                                style="@style/InnovoEditText"
+                                android:hint="@string/prompt_email"
+                                android:inputType="textEmailAddress"
+                                android:maxLength="50"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_phone"
+                                style="@style/InnovoEditText"
+                                android:hint="TELEFONO"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="end"
+                        android:paddingBottom="5dp"
+                        android:paddingStart="20dp"
+                        android:text="Datos de Emergencia"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorAccent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_nameContact"
+                                style="@style/InnovoEditText"
+                                android:hint="CONTACTO DE EMERGENCIA"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="2dp">
+
+                            <EditText
+                                android:id="@+id/edtt_phoneContact"
+                                style="@style/InnovoEditText"
+                                android:hint="TELEFONO DE EMERGENCIA"
+                                android:inputType="text"
+                                android:maxLength="50"
+                                android:maxLines="1" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--
+                    <LinearLayout
+                        android:id="@+id/layoutTitleContract"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <android.support.v7.widget.Toolbar
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            android:layout_margin="-10dp"
+                            android:background="?attr/colorAccent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="CONTRATO"
+                                android:textColor="#fff"
+                                android:textSize="20sp"
+                                android:textStyle="normal" />
+
+                        </android.support.v7.widget.Toolbar>
+                    </LinearLayout>
+
+                    <include layout="@layout/custom_list_info_recycler" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/contracts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                card_view:cardBackgroundColor="@android:color/white"
+                card_view:cardCornerRadius="1dp"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/cancel_button"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="20dp"
+                        android:text="@string/cancel_button"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/create_button"
+                        style="@style/Widget.Button.Green"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="CONTINUAR" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/pref_geofences">
+        <EditTextPreference
+            android:defaultValue="100"
+            android:key="pref_key_radius"
+            android:inputType="number"
+            android:summary="@string/pref_summary_radius"
+            android:title="@string/pref_title_radius" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

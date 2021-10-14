@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="personal"
+            type="co.tecno.sersoluciones.analityco.models.PersonalNetwork" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/control_buttons"
+                layout="@layout/base_control_buttons" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/users_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/whiteTransparent"
+                app:cardCornerRadius="1dp"
+                app:cardUseCompatPadding="false"
+                tools:ignore="UnusedAttribute">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/icon_logo"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginTop="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/profile_dummy"
+                            app:setLogoImage="@{personal.Photo}"
+                            app:shapeAppearance="@style/ShapeAppearance.App.SmallComponent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="end"
+                            android:paddingStart="20dp"
+                            android:paddingBottom="5dp"
+                            android:text="Cargo y Vigencia"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorAccent" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardBackgroundColor="@android:color/white"
+                            app:cardCornerRadius="3dp"
+                            app:cardElevation="3dp"
+                            app:cardUseCompatPadding="false">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/logo"
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="0dp"
+                                        android:contentDescription="@string/str_phone"
+                                        android:scaleType="fitCenter"
+                                        tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                    <ImageView
+                                        android:id="@+id/state_icon"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:background="@drawable/state_icon"
+                                        android:rotation="180"
+                                        android:visibility="gone" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toEndOf="@+id/logo"
+                                        android:paddingLeft="5dp"
+                                        android:paddingTop="5dp"
+                                        android:paddingRight="5dp"
+                                        tools:ignore="RtlCompat">
+
+                                        <TextView
+                                            android:id="@+id/text_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_marginRight="10dp"
+                                            android:ellipsize="end"
+                                            android:fontFamily="sans-serif-light"
+                                            android:maxLines="1"
+                                            android:text="name"
+                                            android:textAllCaps="true"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                            android:textColor="@android:color/black"
+                                            android:textStyle="bold"
+                                            tools:ignore="RtlCompat,RtlHardcoded,RtlSymmetry" />
+
+                                        <TextView
+                                            android:id="@+id/text_sub_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/text_name"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_marginBottom="2dp"
+                                            android:ellipsize="end"
+                                            android:fontFamily="sans-serif-light"
+                                            android:maxLines="1"
+                                            android:text="subname"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                            android:textColor="@android:color/black"
+                                            tools:ignore="RtlCompat" />
+
+                                        <LinearLayout
+                                            android:id="@+id/section_icon"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/text_sub_name"
+                                            android:layout_marginBottom="2dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="horizontal">
+
+                                            <ImageView
+                                                android:id="@+id/icon1"
+                                                android:layout_width="25dp"
+                                                android:layout_height="25dp"
+                                                android:layout_marginEnd="4dp"
+                                                android:clickable="true"
+                                                android:contentDescription="@string/str_phone"
+                                                android:focusable="true"
+                                                android:foreground="?android:attr/selectableItemBackground"
+                                                android:scaleType="fitCenter"
+                                                tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                                android:layout_width="25dp"
+                                                android:layout_height="25dp"
+                                                android:layout_marginEnd="4dp"
+                                                android:scaleType="center"
+                                                app:materialIcon="calendar"
+                                                app:materialIconColor="#b3000000"
+                                                app:materialIconSize="25dp" />
+
+                                            <TextView
+                                                android:id="@+id/text_icon1"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:ellipsize="end"
+                                                android:fontFamily="sans-serif-light"
+                                                android:gravity="center"
+                                                android:maxLines="1"
+                                                android:text="31 dic 18"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                                android:textColor="@android:color/black"
+                                                tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                            <TextView
+                                                android:id="@+id/text_icon2"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:ellipsize="end"
+                                                android:fontFamily="sans-serif-light"
+                                                android:gravity="center"
+                                                android:maxLines="1"
+                                                android:text="31 dic 18"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                                android:textColor="@android:color/black"
+                                                tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+
+                            android:id="@+id/layout_main_user"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="15dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/ExposedDropdownMenuText.App.TextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_search"
+                                app:startIconDrawable="@drawable/ic_menu_search">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/edit_position"
+                                    style="@style/AnalitycoEditText"
+                                    android:hint="CARGO"
+                                    android:imeOptions="flagNoExtractUi|actionSearch"
+                                    android:inputType="textCapSentences"
+                                    android:text="@string/cargo_desconocido" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="10dp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="@string/tipo_de_riesgo"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textStyle="bold" />
+
+                                <Spinner
+                                    android:id="@+id/spinnerTypeRisk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@drawable/spinner_background"
+                                    android:popupBackground="@android:color/white" />
+
+                            </RelativeLayout>
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="10dp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="Inicio"
+                                    android:textAllCaps="true"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textStyle="normal" />
+
+                                <Button
+                                    android:id="@+id/btn_from_date"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="70dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="0dp"
+                                    android:gravity="center"
+                                    android:paddingLeft="30dip"
+                                    android:paddingRight="30dip"
+                                    android:textAllCaps="true"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    app:icon="@drawable/ic_calendar"
+                                    app:shapeAppearance="@style/ShapeAppearance.App.SmallComponent"
+                                    app:strokeColor="@color/colorUnderline"
+                                    app:strokeWidth="2dp"
+                                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                <android.widget.TextView
+                                    android:id="@+id/tvFromDateError"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginTop="30dp"
+                                    android:focusable="true"
+                                    android:focusableInTouchMode="true"
+                                    android:paddingTop="0dp"
+                                    android:visibility="gone" />
+
+                            </RelativeLayout>
+
+                            <androidx.legacy.widget.Space
+                                android:layout_width="match_parent"
+                                android:layout_height="10dp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="FIN"
+                                    android:textAllCaps="true"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textStyle="normal" />
+
+                                <Button
+                                    android:id="@+id/btn_to_date"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="70dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:gravity="center"
+                                    android:paddingLeft="30dip"
+                                    android:paddingRight="30dip"
+                                    android:textAllCaps="true"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    app:icon="@drawable/ic_calendar"
+                                    app:shapeAppearance="@style/ShapeAppearance.App.SmallComponent"
+                                    app:strokeColor="@color/colorUnderline"
+                                    app:strokeWidth="2dp"
+                                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                <android.widget.TextView
+                                    android:id="@+id/tvToDateError"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginTop="30dp"
+                                    android:focusable="true"
+                                    android:focusableInTouchMode="true"
+                                    android:paddingTop="0dp"
+                                    android:visibility="gone" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/textError"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mProgressView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_overlay"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:layout_anchorGravity="center_vertical|center_horizontal" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

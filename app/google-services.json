@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "391131385361",
+    "firebase_url": "https://innovodata-419cf.firebaseio.com",
+    "project_id": "innovodata-419cf",
+    "storage_bucket": "innovodata-419cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391131385361:android:70329402d912e3ee59abb0",
+        "android_client_info": {
+          "package_name": "co.tecno.sersoluciones.analityco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391131385361-008uflanjoa2fkf3pjjt6irkabulsn23.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.tecno.sersoluciones.analityco",
+            "certificate_hash": "eebea165bcba16b55f30d71fd3efce0093b3c99c"
+          }
+        },
+        {
+          "client_id": "391131385361-2cg82p026j18l4jvvtf8ioologufk1bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASQu5IqJA6JmVj1tNI4lli0yPBhOKGW34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391131385361-2cg82p026j18l4jvvtf8ioologufk1bi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

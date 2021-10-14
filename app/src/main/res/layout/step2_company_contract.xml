@@ -1,0 +1,394 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContractActivity"
+    tools:ignore="UnusedAttribute">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".Principal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:cardElevation="1dp"
+                card_view:cardBackgroundColor="@android:color/transparent"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:id="@+id/email_login_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/whiteTransparent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:background="@drawable/border"
+                            android:padding="10dp">
+
+                            <net.steamcrafted.materialiconlib.MaterialIconView
+                                android:id="@+id/icon_logo"
+                                android:layout_width="190dp"
+                                android:layout_height="190dp"
+                                android:scaleType="fitCenter"
+                                app:materialIcon="account_circle"
+                                app:materialIconColor="@color/gray"
+                                app:materialIconSize="170dp" />
+
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab_remove"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:onClick="removeLogo"
+                                app:backgroundTint="@color/pink"
+                                app:fabSize="mini"
+                                app:srcCompat="@android:drawable/ic_menu_delete" />
+
+                        </RelativeLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:id="@+id/companyIdentification"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.3"
+                                android:orientation="vertical">
+
+                                <Spinner
+                                    android:id="@+id/spinner_doc_type"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/spinner_background"
+                                    android:popupBackground="@android:color/white" />
+
+                                <android.widget.TextView
+                                    android:id="@+id/tvDocTypeError"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginTop="-5dp"
+                                    android:focusable="true"
+                                    android:focusableInTouchMode="true"
+                                    android:paddingTop="0dp"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:background="@drawable/bg_search"
+                                android:padding="7dp">
+
+                                <EditText
+                                    android:id="@+id/user_doc_number"
+                                    style="@style/InnovoEditText"
+                                    android:hint="@string/str_number_required"
+                                    android:inputType="number"
+                                    android:maxLength="10"
+                                    android:maxLines="1"
+                                    android:textColor="@android:color/black" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/layout_verification"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.4"
+                                android:background="@drawable/bg_search"
+                                android:padding="7dp">
+
+                                <EditText
+                                    android:id="@+id/number_verification"
+                                    style="@style/InnovoEditText"
+                                    android:layout_marginEnd="2dp"
+                                    android:layout_marginStart="2dp"
+                                    android:ems="2"
+                                    android:enabled="false"
+                                    android:inputType="number"
+                                    android:maxLength="1"
+                                    android:maxLines="1"
+                                    tools:ignore="RtlCompat" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.4"
+                                android:gravity="center">
+
+                                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                    android:id="@+id/fab_search"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:fabSize="mini"
+                                    app:backgroundTint="@color/btnBackground"
+                                    app:srcCompat="@android:drawable/ic_menu_search" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/identificationEdit"
+                            style="@style/InnovoEditText"
+                            android:visibility="gone"
+                            android:hint="@string/str_razon_social"
+                            android:inputType="text"
+                            android:maxLength="200"
+                            android:maxLines="1" />
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:id="@+id/spaceIdentification"
+                            android:layout_height="10dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_search"
+                            android:padding="7dp">
+
+                            <EditText
+                                android:id="@+id/edtt_name"
+                                style="@style/InnovoEditText"
+                                android:enabled="false"
+                                android:hint="@string/str_razon_social"
+                                android:inputType="text"
+                                android:maxLength="200"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+
+                        <Spinner
+                            android:id="@+id/spinner_contract_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_background"
+                            android:popupBackground="@android:color/white" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardBackgroundColor="@android:color/white"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardUseCompatPadding="true"
+                tools:ignore="UnusedAttribute">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_margin="-15dp"
+                        android:background="?attr/colorAccent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="VIGENCIA DEL CLIENTE"
+                            android:textColor="#fff"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="@string/str_start"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textStyle="normal" />
+
+                            <Button
+                                android:id="@+id/btn_from_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/border"
+                                android:drawableLeft="@drawable/ic_calendar"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:gravity="center"
+                                android:paddingLeft="30dip"
+                                android:paddingRight="30dip"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                tools:ignore="RtlCompat,RtlHardcoded" />
+
+                            <android.widget.TextView
+                                android:id="@+id/tvFromDateError"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="30dp"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:paddingTop="0dp"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="@string/str_end"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textStyle="normal" />
+
+                            <Button
+                                android:id="@+id/btn_to_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/border"
+                                android:drawableLeft="@drawable/ic_calendar"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:gravity="center"
+                                android:paddingLeft="30dip"
+                                android:paddingRight="30dip"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                tools:ignore="RtlCompat,RtlHardcoded" />
+
+                            <android.widget.TextView
+                                android:id="@+id/tvToDateError"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="30dp"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:paddingTop="0dp"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                        <androidx.legacy.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                card_view:cardBackgroundColor="@android:color/white"
+                card_view:cardCornerRadius="1dp"
+                card_view:cardUseCompatPadding="true"
+                tools:ignore="UnusedAttribute">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/cancel_button"
+                        android:padding="20dp"
+                        android:text="@string/cancel_button"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/create_button"
+                        style="@style/Widget.Button.Green"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/btn_save" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

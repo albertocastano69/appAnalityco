@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="UnusedAttribute">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:transitionGroup="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toTopOf="@+id/guide1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Login progress -->
+            <ProgressBar
+                android:id="@+id/progress"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:id="@+id/container_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardBackgroundColor="@color/light_gray"
+                card_view:cardCornerRadius="1dp"
+                card_view:cardUseCompatPadding="true"
+                tools:ignore="UnusedAttribute">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <net.steamcrafted.materialiconlib.MaterialIconView
+                        android:id="@+id/icon_edit_main_form"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="6dp"
+                        android:layout_marginStart="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:onClick="updateVisivilityMain"
+                        android:scaleType="center"
+                        android:visibility="gone"
+                        app:materialIcon="pencil"
+                        app:materialIconColor="@color/colorAccent"
+                        app:materialIconSize="40dp" />
+
+                    <ImageView
+                        android:id="@+id/header_img"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/white"
+                        android:elevation="5dp"
+                        android:foregroundGravity="center"
+                        android:scaleType="fitCenter"
+                        android:transitionName="@string/img_transition"
+                        tools:targetApi="lollipop" />
+
+                    <TextView
+                        android:id="@+id/label_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/header_img"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Reseña"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_review"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/header_img"
+                        android:layout_toEndOf="@+id/label_name"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="end"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@android:color/black"
+                        tools:ignore="RtlHardcoded" />
+
+
+                    <TextView
+                        android:id="@+id/contractTypeC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_review"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Tipo de contrato"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_contratTypeC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_review"
+                        android:layout_alignParentEnd="true"
+                        android:layout_toEndOf="@+id/contractTypeC"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="end"
+                        android:padding="2dp"
+                        android:textAlignment="textEnd"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/black" />
+
+                    <Button
+                        android:id="@+id/see_contract"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/text_contratTypeC"
+                        android:layout_alignParentStart="true"
+                        android:layout_margin="12dp"
+                        android:layout_weight="1"
+                        android:background="?attr/colorPrimary"
+                        android:text="@string/str_see_contract"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/see_contract"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="end"
+                            android:paddingStart="20dp"
+                            android:paddingBottom="5dp"
+                            android:text="CONTRATANTE"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            tools:ignore="RtlHardcoded" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorPrimary" />
+
+                        <include layout="@layout/custom_list_info_recycler" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/list_users_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="500dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="end"
+                            android:paddingStart="20dp"
+                            android:paddingBottom="5dp"
+                            android:text="CONTRATISTA"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            tools:ignore="RtlHardcoded" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorPrimary" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            card_view:cardBackgroundColor="@color/light_gray"
+                            card_view:cardCornerRadius="5dp"
+                            card_view:cardUseCompatPadding="true">
+
+                            <RelativeLayout
+                                android:id="@+id/employerSelected"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp">
+
+                                <ImageView
+                                    android:id="@+id/logo_contract"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:contentDescription="@string/str_phone"
+                                    android:scaleType="fitCenter"
+                                    tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@+id/logo_contract"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="5dp"
+                                    android:paddingBottom="10dp"
+                                    tools:ignore="RtlCompat">
+
+                                    <TextView
+                                        android:id="@+id/text_name_contract"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginEnd="20dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_toStartOf="@+id/btn_edit_contract"
+                                        android:ellipsize="end"
+                                        android:fontFamily="sans-serif-light"
+                                        android:maxLines="1"
+                                        android:textAllCaps="true"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                        android:textColor="@android:color/black"
+                                        tools:ignore="RtlCompat,RtlHardcoded,RtlSymmetry" />
+
+                                    <TextView
+                                        android:id="@+id/text_sub_name_contract"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/text_name_contract"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginEnd="40dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:layout_toStartOf="@+id/btn_edit_contract"
+                                        android:ellipsize="end"
+                                        android:fontFamily="sans-serif-light"
+                                        android:maxLines="1"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                        android:textColor="@android:color/black"
+                                        tools:ignore="RtlCompat" />
+
+                                    <TextView
+                                        android:id="@+id/label_validity_context"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/text_sub_name"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:ellipsize="end"
+                                        android:fontFamily="sans-serif-light"
+                                        android:maxLines="1"
+                                        android:text="@string/label_validity"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                        android:textColor="@android:color/black"
+                                        android:textStyle="bold"
+                                        tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                    <TextView
+                                        android:id="@+id/text_validity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/text_sub_name"
+                                        android:layout_marginBottom="2dp"
+                                        android:layout_toEndOf="@+id/label_validity"
+                                        android:ellipsize="end"
+                                        android:fontFamily="sans-serif-light"
+                                        android:maxLines="1"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                        android:textColor="@android:color/black"
+                                        tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                    <ImageView
+                                        android:id="@+id/icon_is_active"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_below="@+id/text_sub_name"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="-10dp"
+                                        android:layout_marginRight="5dp"
+                                        android:contentDescription="@string/str_phone"
+                                        android:scaleType="fitCenter"
+                                        tools:ignore="RtlCompat,RtlHardcoded" />
+
+                                    <Button
+                                        android:id="@+id/btn_edit_contract"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentRight="true"
+                                        android:background="@drawable/button_edit"
+                                        tools:ignore="RtlCompat,RtlHardcoded" />
+
+
+                                </RelativeLayout>
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <Spinner
+                                android:id="@+id/spinner_contract_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#FFFFFF"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+
+                                <Button
+                                    android:id="@+id/cancel_button"
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:padding="20dp"
+                                    android:text="@string/cancel_button"
+                                    android:textAllCaps="true"
+                                    android:textAppearance="?android:textAppearanceMedium"
+                                    android:textStyle="bold" />
+
+                                <Button
+                                    android:id="@+id/create_button"
+                                    style="@style/Widget.Button.Green"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/btn_save" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guide1">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/margin_text"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center_horizontal"
+            android:text="@string/categoria_de_personal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guide2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_contratType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:padding="2dp"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guide3"
+            app:layout_constraintStart_toEndOf="@id/guide2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_contratType"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

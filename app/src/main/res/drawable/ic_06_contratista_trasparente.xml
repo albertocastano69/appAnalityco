@@ -1,0 +1,13 @@
+<vector android:height="36dp" android:viewportHeight="566.9"
+    android:viewportWidth="566.9" android:width="36dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#00897B" android:pathData="M371.3,392.2L305,405.1l-66.3,-12.9c0,0 -145.8,25.6 -145.8,167.7h424.1C517.1,418.3 371.3,392.2 371.3,392.2"/>
+    <path android:fillColor="#FF9800" android:pathData="M305,469.6l-66.3,-77.4v-77.4h132.5v77.4L305,469.6z"/>
+    <path android:fillColor="#FFA726" android:pathData="M450.8,237.4c0,14.3 -11.9,25.8 -26.5,25.8s-26.5,-11.5 -26.5,-25.8c0,-14.3 11.9,-25.8 26.5,-25.8S450.8,223.1 450.8,237.4M212.2,237.4c0,-14.3 -11.9,-25.8 -26.5,-25.8c-14.6,0 -26.5,11.5 -26.5,25.8c0,14.3 11.9,25.8 26.5,25.8S212.2,251.7 212.2,237.4"/>
+    <path android:fillColor="#FFB74D" android:pathData="M424.3,160c0,-98.5 -238.6,-64.2 -238.6,0v90.3c0,64.2 53.4,116.1 119.3,116.1c65.9,0 119.3,-52 119.3,-116.1V160z"/>
+    <path android:fillColor="#424242" android:pathData="M305,43.9c-80.5,0 -132.5,63.6 -132.5,141.9v29.5l26.5,22.1v-64.5l159,-51.6l53,51.6v64.5l26.5,-22.5v-29.1c0,-51.9 -13.8,-103.4 -79.5,-116.1l-13.3,-25.8L305,43.9L305,43.9z"/>
+    <path android:fillColor="#784719" android:pathData="M344.8,237.4c0,-7.1 6,-12.9 13.3,-12.9c7.3,0 13.3,5.8 13.3,12.9c0,7.1 -6,12.9 -13.3,12.9C350.7,250.3 344.8,244.5 344.8,237.4M238.8,237.4c0,7.1 6,12.9 13.3,12.9c7.3,0 13.3,-5.8 13.3,-12.9c0,-7.1 -6,-12.9 -13.3,-12.9S238.8,230.3 238.8,237.4"/>
+    <path android:fillColor="#F9A825" android:pathData="M384.5,395.5v112.8h-159V395.5c-12.5,3.6 -32.4,10.6 -53,23.1V560h265.1V418.8C416.9,406.2 397.1,399.1 384.5,395.5z"/>
+    <path android:fillColor="#263238" android:pathData="M225.5,508.4h-53v-38.7h53V508.4zM437.5,469.6h-53v38.7h53V469.6L437.5,469.6z"/>
+    <path android:fillColor="#FF5722" android:pathData="M437.5,160v-12.9C437.5,82.9 384.2,31 318.3,31h-26.5c-65.9,0 -119.3,52 -119.3,116.1V160H146v38.7h318.1V160H437.5z"/>
+    <path android:fillColor="#D84315" android:pathData="M265.3,18.1h79.5V160h-79.5L265.3,18.1L265.3,18.1z"/>
+</vector>

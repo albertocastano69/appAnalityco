@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="co.tecno.sersoluciones.analityco.EnrollmentActivity"
+    tools:showIn="@layout/activity_enrollment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="7dp"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/layout_project"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="PROYECTO:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/accent"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/name_project"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/header_img"
+                android:fontFamily="sans-serif-light"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/spinner_Project"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_background"
+            android:popupBackground="@android:color/white" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <Spinner
+            android:id="@+id/spinner_Steps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_background"
+            android:popupBackground="@android:color/white" />
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search"
+            android:padding="10dp">
+
+            <co.tecno.sersoluciones.analityco.views.EconomicCompletionView
+                android:id="@+id/edit_economic_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:hint="Etapas" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Inicio:"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="normal" />
+
+                    <Button
+                        android:id="@+id/btn_from_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/border"
+                        android:drawableLeft="@drawable/ic_calendar"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:paddingLeft="30dip"
+                        android:paddingRight="30dip"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <android.widget.TextView
+                        android:id="@+id/tvFromDateError"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="30dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:paddingTop="0dp"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <androidx.legacy.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Fin:"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="normal" />
+
+                    <Button
+                        android:id="@+id/btn_to_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/border"
+                        android:drawableLeft="@drawable/ic_calendar"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:paddingLeft="30dip"
+                        android:paddingRight="30dip"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <android.widget.TextView
+                        android:id="@+id/tvToDateError"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="30dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:paddingTop="0dp"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/cancel_button"
+                android:padding="20dp"
+                android:text="@string/cancel_button"
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/create_button"
+                style="@style/Widget.Button.Green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_save" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

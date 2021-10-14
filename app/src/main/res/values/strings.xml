@@ -1,0 +1,390 @@
+<resources>
+    <string name="app_name">Analityco</string>
+
+    <string name="pref_value_ip_server" translatable="false">api-acceso.analityco.com</string>
+    <!--    <string name="pref_value_ip_server" translatable="false">192.168.137.1:5004</string>-->
+    <string name="pref_value_port_server" translatable="false">8000</string>
+    <string name="prompt_user_id">Username</string>
+    <string name="title_activity_splash" translatable="false">Analityco APP</string>
+    <string name="filter_view_http_analityco" translatable="false">filter_view_http_analityco</string>
+
+    <string name="dummy_content" translatable="false">Analityco</string>
+    <string name="login_text">Inicia Sesión</string>
+    <string name="register_text">Crear Usuario</string>
+
+    <string name="pref_value_username" translatable="false">qwe</string>
+    <string name="pref_value_password" translatable="false">1234</string>
+    <string name="scan_dni" translatable="false">CÁMARA</string>
+    <string name="title_activity_company_list" translatable="false">Lista de Empresas</string>
+    <string name="title_activity_personal_list" translatable="false">PERSONAL</string>
+    <string name="img_transition" translatable="false">img_transition</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+
+    <string name="title_activity_login" translatable="false">Sign in</string>
+    <string name="title_activity_register" translatable="false">Regístrate</string>
+
+    <string name="str_state">ESTADO:</string>
+    <string name="str_last_name">APELLIDOS</string>
+    <string name="str_name">NOMBRE</string>
+    <string name="str_address">DIRECCIÓN</string>
+    <string name="str_phone">TELÉFONO</string>
+    <string name="str_web_site">SITIO WEB</string>
+    <string name="km">KM</string>
+    <string name="label_start">Inicio:</string>
+    <string name="label_end">Fin:</string>
+    <string name="storage" translatable="false">Almacenamiento:</string>
+    <string name="maxUser" translatable="false">Usuarios máximos por proyecto:</string>
+    <string name="maxPersonal" translatable="false">Consultas máximas de personal por mes:</string>
+    <string name="btn_save">GUARDAR</string>
+    <string name="gmd_image" translatable="false" />
+    <string name="ok">Permitir permisos</string>
+    <string name="accept">Aceptar</string>
+    <string name="info_btn_scan">Ahora presione el botón "CAMARA" y escanee el código de barras que se encuentra en la parte posterior de la cédula</string>
+    <string name="info_btn_project">Haga click sobre la tarjeta del proyecto a seleccionar</string>
+    <string name="text_previous">Anterior</string>
+    <string name="text_next">Siguiente</string>
+    <string name="text_end">Finalizar</string>
+    <string name="action_call">Llamar</string>
+
+    <string name="permission_camera_rationale">camara desactivada</string>
+    <string name="no_camera_permission">No tiene permisos para ver la camera</string>
+
+    <string name="info_user_inactive">as</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="safe_button">Guardar</string>
+    <string name="title_activity_company">CompanyActivity</string>
+    <string name="text_cancel">Cancelar</string>
+    <string name="text_aceptar">Aceptar</string>
+    <string name="survey_rejected">QUEDATE EN CASA, INFORMA A TU JEFE INMEDIATO Y LLAMA A TU EPS</string>
+    <string name="survey_orange">ESPERA EN EL INGRESO DE TU SITIO DE TRABAJO, VAMOS A INVESTIGAR MAS TU CASO</string>
+    <string name="survey_ok">ENCUESTA COMPLETADA CON ÉXITO</string>
+    <string name="str_current_pass">CONTRASEÑA ACTUAL</string>
+    <string name="str_new_pass">NUEVA CONTRASEÑA</string>
+    <string name="str_see_contract" translatable="false">VER CONTRATO</string>
+    <string name="str_send_contract" translatable="false">SELECCIONAR CONTRATO</string>
+    <string name="str_confirm_pass">CONFIRMAR CONTRASEÑA</string>
+    <string name="label_ciuu">CIIU</string>
+    <string name="label_area_geofence">Area max. de geocerca</string>
+    <string name="str_activos">ACTIVOS</string>
+    <string name="str_contratos">CONTRATOS</string>
+    <string name="str_ordenes">ORDENES</string>
+    <string name="str_inactivos">INACTIVOS</string>
+    <string name="label_validity">Vigencia</string>
+
+    <string name="action_change_password">Cambiar Contraseña</string>
+    <string name="action_edit_profile">Cambia Foto</string>
+
+    <string name="buscar">Buscar</string>
+    <string name="action_details" translatable="false">Detalles</string>
+    <string name="sync" translatable="false">Sincronizar Dashboard</string>
+    <string name="title_activity_employers_list">EMPLEADORES</string>
+    <string name="por_vencer">POR VENCER</string>
+    <string name="customer">Administradoras</string>
+    <string name="projects">Proyectos</string>
+    <string name="empleadores">Empresas</string>
+    <string name="contratos">Contratos</string>
+    <string name="contratosindividual">Contratos Individuales</string>
+    <string name="vehiculos">Vehiculos</string>
+    <string name="str_nav_main">Inicio - Consultas</string>
+    <string name="scanear">Escanear</string>
+    <string name="scanearCheck" translatable="false">Registrar y Verificar</string>
+    <string name="str_settings">Configuración</string>
+    <string name="str_main">PRINCIPAL</string>
+    <string name="str_other_branch_offices">OTRAS SUCURSALES</string>
+    <string name="str_add_branch_office">Agregar una sucursal</string>
+    <string name="str_select_city">SELECCIONE UNA CIUDAD</string>
+    <string name="str_razon_social">RAZON SOCIAL *</string>
+    <string name="str_number_required">NÚMERO *</string>
+    <string name="actividades_economicas">ACTIVIDADES ECONOMICAS</string>
+    <string name="str_max_geofence">Tamaño Max. Geocerca:</string>
+    <string name="str_digit_city">DIGITE LA CIUDAD</string>
+    <string name="str_digit_local_city">CIUDAD DE VIVIENDA</string>
+
+    <string name="str_domains_required">DOMINIOS *</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="action_draw">Dibujar</string>
+    <string name="action_current_location">Ubicación</string>
+    <string name="str_start">Vigencia:</string>
+    <string name="str_end">Fin:</string>
+    <string name="title_activity_user_profile">MI PERFIL</string>
+    <string name="str_user">USUARIO</string>
+    <string name="btn_link">VINCULAR</string>
+    <string name="str_label_add_admin_user">Vincular Usuario</string>
+    <string name="str_label_add_user" translatable="false">Vincular un usuario </string>
+    <string name="str_label_add_commp_proj" translatable="false">VINCULAR EMPRESA</string>
+    <string name="str_label_add_stage_proj" translatable="false">Crear nueva etapa</string>
+    <string name="str_geofence">GEOCERCA</string>
+    <string name="order">ORDENAR</string>
+    <string name="str_by_name">Por nombre</string>
+    <string name="str_order">Ordenar</string>
+    <string name="str_asc">Ascendente</string>
+    <string name="str_desc">Descendente</string>
+    <string name="str_select">SELECCIONAR</string>
+    <string name="str_by_nit">Por NIT</string>
+    <string name="str_by_date">Por fecha</string>
+    <string name="str_apply">Aplicar</string>
+    <string name="str_by_state">Por estado</string>
+    <string name="str_by_address">Por dirección</string>
+    <string name="str_by_lastname" translatable="false">Por apellido</string>
+    <string name="str_by_docnum" translatable="false">Por Num Doc</string>
+
+    <string name="review" translatable="false">Reseña</string>
+    <string name="contract_number" translatable="false">Número de contrato</string>
+    <string name="str_role">Rol *</string>
+    <string name="label_role">Rol</string>
+    <string name="label_nit">Nit</string>
+    <string name="label_arl">ARL</string>
+    <string name="text_cargo">Cargo</string>
+    <string name="pref_expiry_days">Dias de alerta para notificaciones</string>
+    <string name="pref_summary_company_days">Configure aqui los dias de vigencia</string>
+    <string name="pref_summary_employer_days">Configure aqui los dias de vigencia</string>
+    <string name="pref_summary_projects_days">Configure aqui los dias de vigencia</string>
+    <string name="pref_summary_contracts_days">Configure aqui los dias de vigencia</string>
+    <string name="pref_summary_personal_days" translatable="false">Configure aqui los dias de vigencia</string>
+    <string name="pref_title_company_days">Empresas</string>
+    <string name="pref_title_employer_days">Empleadores</string>
+    <string name="pref_title_project_days">Proyectos</string>
+    <string name="pref_title_contract_days">Contratos</string>
+    <string name="pref_title_personal_days" translatable="false">Personal</string>
+    <string name="write_doc" translatable="false">Documento de identificación</string>
+    <string name="text_save">GUARDAR</string>
+
+    <string name="crop_image_activity_title" translatable="false">Personalizar Imagen</string>
+    <string name="crop_image_menu_rotate_right" translatable="false">Rotar</string>
+    <string name="crop_image_menu_crop" translatable="false">Recortar</string>
+    <string name="str_contact">CONTACTO</string>
+    <string name="title_activity_details_company_tabs" translatable="false">DetailsCompanyActivityTabs</string>
+    <string name="title_activity_new_user_admin" translatable="false">NewUserAdminActivity</string>
+    <string name="title_activity_details_project_tabs" translatable="false">DetailsProjectActivityTabs</string>
+    <string name="title_activity_details_car_tabs" translatable="false">DetailsCarActivityTabs</string>
+    <string name="title_activity_details_single_contacts_tabs" translatable="false">DetailsSingleContractActivityTabs</string>
+    <string name="title_activity_edit_info_project_fragment" translatable="false">EditInfoProjectFragment</string>
+    <string name="action_review">RESEÑA</string>
+    <string name="personal_menu" translatable="false">Personal</string>
+    <string name="admin_company" translatable="false">Administrar empresa</string>
+    <string name="option1" translatable="false">Verificar Requisitos</string>
+    <string name="option2" translatable="false">Inspeccionar Requisitos</string>
+    <string name="option3" translatable="false">Reqistrar Entrada</string>
+    <string name="option4" translatable="false">Registrar Salida</string>
+    <string name="notification" translatable="false">Notificaciones</string>
+    <string name="title_activity_decode_barcode" translatable="false">Custom Barcode</string>
+    <string name="enfoca_el_codigo_de_barras_o_el_codigo_qr">Enfoca el codigo de barras o el codigo QR</string>
+
+    <string name="pref_server_info">Servidor</string>
+    <string name="pref_title_ip_address_server">IP</string>
+    <string name="pref_summary_ip_address_server">Escriba la IP/URL del servidor</string>
+    <string name="pref_title_port_server">Port</string>
+    <string name="pref_summary_port_server">Escriba el puerto del servidor</string>
+
+    <string name="pref_summary_pass">Digite la contrasena para cambiar configuracion del servidor</string>
+    <string name="title_activity_personal_wizard" translatable="false">Enrolar Empleado</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_join_contracts">Vinculado a los contratos</string>
+    <string name="tipo_de_riesgo">Tipo de riesgo</string>
+    <string name="tipo_de_contrato">Tipo de contrato</string>
+    <string name="tipo_de_position">Oficio a desempeñar</string>
+    <string name="pay_period">Periodo de pago</string>
+    <string name="date_init">Fecha de inicio de labores</string>
+    <string name="date_contract">Fecha del contrato</string>
+    <string name="country_contract">País del contrato</string>
+    <string name="city_contract">Ciudad del contrato</string>
+    <string name="place_job">Lugar de trabajo</string>
+    <string name="salario">Salario mensual</string>
+    <string name="administrativo">Administrativo</string>
+    <string name="vehiculo_administrativo">Vehiculo Administrativo</string>
+    <string name="proveedor">Proveedor</string>
+    <string name="vehiculo_proveedor">Vehiculo Proveedor</string>
+    <string name="contratista">Contratista</string>
+    <string name="vehiculo_contratista">Vehiculo Contratista</string>
+    <string name="visitante">Visitante</string>
+    <string name="vehiculo_visitante">Vehiculo Visitante</string>
+    <string name="asociado">Asociado</string>
+    <string name="vehiculo_asociado">Vehiculo Asociado</string>
+    <string name="otro">Otro</string>
+    <string name="vehiculo_otro">Vehiculo Otro</string>
+    <string name="funcionario">Funcionario</string>
+    <string name="vehiculo_funcionario">Vehiculo Funcionario</string>
+    <string name="contratos_to_join">Contratos para vinvular</string>
+    <string name="label_rh">RH</string>
+    <string name="str_digit_city_birth">Ciudad de Nacimiento</string>
+    <string name="label_afp">AFP</string>
+    <string name="label_eps">EPS</string>
+    <string name="oficina_principal">Oficina: Principal</string>
+    <string name="otras_sucursales">Otras sucursales</string>
+    <string name="condiciones_de_servicio">Condiciones de Servicio</string>
+    <string name="crear_proyecto">Crear proyecto</string>
+    <string name="mas_informacion">Mas Información</string>
+    <string name="vigencia_del_proyecto">Vigencia del proyecto:</string>
+    <string name="crear_etapa">Crear Etapa</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="editar">Editar</string>
+    <string name="vincular_empresa">VINCULAR EMPRESA</string>
+    <string name="empresa_asociada">Empresa Asociada</string>
+    <string name="administradora">Administradora</string>
+    <string name="todos">TODOS</string>
+    <string name="cargar_contrato_escaneado">Cargar contrato Escaneado</string>
+    <string name="personal_vinculado">Personal Vinculado</string>
+    <string name="agregar_personal">Agregar personal</string>
+    <string name="usuarios_vinculados">Usuarios vinculados</string>
+    <string name="persona_en_horario">Persona en Horario</string>
+    <string name="no_permitido">NO PERMITIDO</string>
+    <string name="mensaje_horario">Se registrara la asistencia al permitir ingreso</string>
+    <string name="permitir_ingreso">PERMITIR INGRESO</string>
+    <string name="siguiente">SIGUIENTE</string>
+    <string name="title_activity_check_reqs_personal">CheckReqsPersonalActivity</string>
+    <string name="alert_null_phone">El usuario Administrador no cuenta con un numero telefónico  registrado</string>
+    <string name="alert_null_phone_title">No es posible realizar la llamada</string>
+    <string name="mas_informaci_n" translatable="false">Mas Información</string>
+    <string name="rh">RH</string>
+    <string name="id">ID</string>
+    <string name="categoria_de_personal">Categoria de personal</string>
+    <string name="empresas_asociadas">Empresas Asociadas</string>
+    <string name="vigencia_empresa_asociada">Vigencia empresa asociada: </string>
+    <string name="numero_de_identificacion">Numero de Identificacion</string>
+    <string name="cargo_desconocido">Cargo desconocido</string>
+    <string name="contrato">Contrato</string>
+    <string name="requistos_contrato">Documentos y Requesitos</string>
+    <string name="datos_contrato">Datos para el contrato</string>
+    <string name="requisitos_de_acceso">Requisitos de acceso</string>
+    <string name="label_nationality">NACIONALIDAD</string>
+    <string name="alerta_conexion" translatable="false">No se puede establecer conexión con la red, verifique la conexión y vuelva a intentarlo</string>
+    <string name="alerta_conexion_bottom" translatable="false">Sin Internet puedes trabajar en modo offline</string>
+    <string name="volver_a_intentar" translatable="false">Volver a intentar</string>
+    <string name="pref_title_pass" translatable="false">LOCK</string>
+    <string name="unauthorized_menssaje">Solicite el permiso para visualizar esta informacion</string>
+    <string name="title_activity_geofence_google" translatable="false">Map</string>
+
+
+    <!-- GEOCERCAS -->
+
+    <string name="poligono">Polígono</string>
+    <string name="circulo">Círculo</string>
+    <string name="pref_title_radius">Radio (m)</string>
+    <string name="pref_summary_radius">Radio de la geocerca circular</string>
+    <string name="pref_geofences">Geocerca Circular</string>
+    <string name="action_clean">Limpiar</string>
+    <string name="action_radius">Radio Círculo</string>
+    <string name="pref_bool_server">Utilizar Servidor de Prueba</string>
+    <string name="pref_summary_bool_server">Presione el swhitch para cambiar la API</string>
+    <string name="sin_internet">SIN INTERNET \n TRABAJANDO EN MODO OFFLINE </string>
+
+    <string name="title_sync_date">Ultima sincronización</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="Registrar">Registrar</string>
+    <string name="negative_title_1">No cumple los requisitos</string>
+    <string name="horario_no_permitido">Horario no permitido</string>
+    <string name="speak_verificar">verificar</string>
+    <string name="speak_inspeccionar">inspeccionar</string>
+    <string name="speak_in">registrar entrada</string>
+    <string name="speak_out">registrar salida</string>
+    <string name="speak_registrer">Registrado</string>
+    <string name="modulo_registrar_verificar">Modulo de Verificar y Registrar</string>
+    <string name="pref_vibration" translatable="false">Vibrar</string>
+    <string name="pref_vibration_desc" translatable="false">Vibrar cuando no se cumplen los requisitos</string>
+    <string name="pref_speak">Voz</string>
+    <string name="pref_speak_desc">Utilizar voz de ayuda</string>
+    <string name="pref_default_start">Inicio de sesion</string>
+    <string name="pref_default_start_desc">Inicia sesion en este modulo</string>
+    <string name="inicio_sesion_consecutivo_title">Bloqueo de entradas consecutivas</string>
+    <string name="inicio_sesion_consecutivo_summary">No se podran registrar dos entradas consecutivas de una misma persona</string>
+    <string name="bloqueo_incumplimiento_summary">Solo mostrar el boton de ENTRADA cuando cumple los requisitos</string>
+    <string name="bloqueo_incumplimiento_title">Bloqueo por incumplieminto</string>
+    <string name="fijar_botones">Fijar botones</string>
+    <string name="desfijar_botones">Desfijar botones</string>
+    <string name="aceptar_y_comenzar">Aceptar y comenzar</string>
+    <string name="alerta_privacidad">Presionando el botón de \"ACEPTAR Y COMENZAR\", el usuario acepta estar de acuerdo
+    con los </string>
+    <string name="terminos_y_condiciones">\"Términos y condiciones\" </string>
+    <string name="politicas_privacidad">\"Políticas de Privacidad\" </string>
+    <string name="analytico_text">de Analityco.</string>
+    <string name="alert">alert</string>
+    <string name="str_update">Update</string>
+    <string name="rues_not_response">Error de conexión a Rues, ingrese razón social manualmente</string>
+    <string name="error_internet_toast">Actualmente su dispositivo no tiene una conexion estable de internet, por favor intentelo mas tarde</string>
+    <string name="dialog_error_scan">EL CARNET DEL TRABAJADOR NO SE ENCUENTRA ACTIVO</string>
+
+    <string name="close_app_permissions" translatable="false">Debe aceptar los permisos para poder ejecutar la aplicación</string>
+    <string name="close" translatable="false">Cerrar</string>
+    <string name="restart" translatable="false">Reiniciar</string>
+    <string name="botones_fijos">Botones fijos siempre</string>
+
+    <string name="hoy_presento_este_sintoma">Hoy presento este síntoma</string>
+    <string name="reporte_diario_de_sintomas">Reporte Diario de Síntomas</string>
+    <string name="descripcion_sintomas">Se requiere el diligenciamento como medidas de protección ante el COVID-19</string>
+    <string name="descripcion_pregunta_sintomas">Seleccione si esta experimentando uno o más de estos sintomas</string>
+    <string name="personas_sospechas_de_covid_pregunta">Frente a cada texto, marque SI o NO, según corresponda:</string>
+    <string name="pregunta_cuatro">Medio de transporte para desplazarse al trabajo el día de hoy:</string>
+    <string name="temperatura" translatable="false">Temperatura Corporal</string>
+    <string name="fiebre_de_mas_de_38_grados">Fiebre de mas de 38 grados</string>
+    <string name="tos">Tos</string>
+    <string name="congestion_nasal">Congestión nasal</string>
+    <string name="dolor_de_garganta">Dolor de garganta</string>
+    <string name="dificultad_para_respirar">Dificultad para respirar</string>
+    <string name="fatiga">Fatiga</string>
+    <string name="escalofrios">Escalofríos</string>
+    <string name="dolor_de_musculos">Dolor de músculos</string>
+    <string name="problemas_digestivos">Diarrea o problemas digestivos</string>
+    <string name="contacto_con">Contacto con:</string>
+    <string name="contact_with_symptoms">Ha tenido contacto con alguna persona con los síntomas anteriores</string>
+    <string name="contagious_contact">Ha tenido contacto con alguna persona sospechosa o diagnosticada con COVID-19</string>
+    <string name="medio_de_transporte">Medio de transporte</string>
+
+    <string-array name="analityco_glyph_strings" translatable="false">
+        <item>M644.1,101.13V543A101.12,101.12 0,0 1,543 644.11H101.13A101.12,101.12 0,0 1,0 543V101.13A101.13,101.13 0,0 1,101.13 0H543A101.13,101.13 0,0 1,644.1 101.13Z</item>
+        <item>M288.72,322c-2.09,46.3 18.83,80.22 47.21,108.94 -13.58,-0.65 -28.14,-2.3 -42.61,-1.78 -15,0.54 -27.49,8.22 -38.92,20.46C252.23,402.82 255.6,359.69 288.72,322ZM258.11,335.13c10.32,-18.42 26.29,-31.83 46.72,-42.51 -48.72,-9.55 -87.6,9.07 -127.48,34 35,9.48 48.43,34.57 55.19,61.52C240.3,371.86 248.16,352.91 258.11,335.13ZM218.28,279.52c51.81,-12 80,-9.29 118.49,10.89C331.45,256 281.36,213 245.93,200.8 255.23,233 239.77,256.72 218.28,279.52ZM464.2,315.81C432,307 418.62,282.27 410.87,251.14c-11,42.26 -30.43,76.71 -69.24,98.82C378.92,363.39 446.14,335.72 464.2,315.81ZM399,444.34c-9.95,-34.4 5.44,-58.37 28.25,-80.91 -42.23,11.3 -82,12.08 -121.54,-12C322.44,398.11 357.32,423.15 399,444.34ZM350.91,214.42c-14.15,0.7 -28.42,-1.15 -39.7,-1.72 9.71,14.3 21.72,30.17 31.7,47.23 10.19,17.41 13.09,37.31 13.94,59.93 32,-37.58 35.27,-80 33,-126.2C378.52,206.24 365.85,213.68 350.91,214.42ZM412.08,416.26c0.15,13.61 13.35,26.65 26.55,26.23 13.76,-0.43 25.32,-12.33 25.29,-26 0,-14.23 -11.34,-25.82 -25.15,-25.8C424.49,390.68 411.94,402.73 412.08,416.26ZM298.35,495.72c14.12,-0.11 25.35,-12.09 25.19,-26.86 -0.15,-14.55 -11.07,-25.12 -25.72,-24.93 -14.11,0.18 -25,11.49 -24.9,25.92C273,483.74 284.86,495.82 298.35,495.72ZM232.1,226.52c-0.14,-13.58 -11.52,-24.68 -25.43,-24.8 -14.8,-0.13 -26.52,11.16 -26.4,25.42a25.31,25.31 0,0 0,25.61 25.32C220.16,252.5 232.25,240.54 232.1,226.52ZM487.85,268.27A25.5,25.5 0,0 0,462.13 243c-14.06,-0.09 -26.13,11.55 -26.06,25.16a26,26 0,0 0,25.66 25.56C476.87,293.77 487.92,283 487.85,268.27ZM156.25,375.11c0.17,13.25 12.85,26.06 25.9,26.15 13.34,0.09 26.26,-13.29 26,-26.9 -0.3,-13.9 -12,-25 -26.34,-24.93C167.89,349.51 156.09,361.38 156.25,375.11ZM320.63,173.77c0,14.54 10.83,25.46 25.34,25.48s25.51,-10.81 25.5,-25.34 -10.8,-25.49 -25.33,-25.52S320.67,159.24 320.63,173.77Z</item>
+    </string-array>
+
+    <integer-array name="analityco_glyph_colors" translatable="false">
+        <item>@color/logo_analityco</item>
+        <item>@android:color/white</item>
+    </integer-array>
+    <string name="title_activity_create_personal" translatable="false">CreatePersonalActivity</string>
+    <string name="title_activity_create_indivudualcontract" translatable="false">CreateIndividualContractActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
+
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="permissions_location_msg" translatable="false">Debe aceptar los permisos de ubicación para que la aplicación trabaje correctamente</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+    <string name="place_birth_name" translatable="false">%1$s\n%2$s</string>
+    <string name="label_sex">Sexo</string>
+    <string name="nacionality">NACIONALIDAD</string>
+    <string name="colombiano">COLOMBIANO</string>
+    <string name="fab_content_desc">fab back</string>
+    <string name="pref_enable_registers">Ver Registros</string>
+    <string name="pref_summary_enable_registers">Ver registros en el modulo de detalles</string>
+    <string name="title_activity_single_contract">CONTRATOS INDIVIDUALES</string>
+    <string name="respuesta_negativa">No</string>
+    <string name="respuesta_positiva">Si</string>
+    <string name="caminando">Caminando</string>
+    <string name="biclicleta">Bicicleta o patineta</string>
+    <string name="moto">Moto</string>
+    <string name="auto">Automóvil</string>
+    <string name="publico">Transporte masivo(Metro, Transmilenio, Otros)</string>
+    <string name="sitp">Sitp, bus, colectivo</string>
+    <string name="bus">Bus intermunicipal</string>
+    <string name="empresa">Transporte suministrado por la empresa</string>
+    <string name="taxi">Taxi</string>
+    <string name="Temperatura" translatable="false">Ingrese su temperatura</string>
+    <string name="homeoffice">No debo desplazarme porque estoy trabajando desde la casa</string>
+    <string name="recuerde_que_es_necesario">Recuerde que es NECESARIO diligenciar este cuestionario TODOS LOS DÍAS, comorequisto para permitir el ingreso a su lugar de trabajo</string>
+    <string name="politicas_privacidad_aceptar">Aceptación de politicas de privacidad de los datos</string>
+    <string name="ninguna">Ninguna</string>
+
+</resources>
